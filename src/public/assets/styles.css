@@ -1,0 +1,195 @@
+* {
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+  background: #fef4e1;
+}
+
+h1,
+h2 {
+  font-size: 4em;
+  margin: 20px 40px;
+}
+
+.box-profile {
+  float: right;
+  border: 2px solid #000;
+  border-radius: 20px;
+  padding: 20px;
+}
+
+.btn-purchase {
+  margin: 20px 0;
+  background: #00ff15;
+}
+
+.btn-logout {
+  color: #ff0000;
+  display: inline-block;
+  padding: 10px;
+  border-radius: 10px;
+  border: 2px solid #000;
+  text-decoration: none;
+}
+
+.products-items {
+  margin: 40px 0;
+}
+
+.products-items_box {
+  margin: 40px 0;
+}
+
+.product-list {
+  display: flex;
+  gap: 50px;
+  margin: 50px 40px;
+  flex-wrap: wrap;
+}
+
+.product-list__items {
+  display: flex;
+  width: 400px;
+  justify-content: center;
+}
+
+.product-list__items-btn {
+  width: 400px;
+}
+
+ul li {
+  list-style-type: none;
+  font-size: 1.2em;
+  margin: 5px 0;
+}
+
+a:hover {
+  box-shadow: 2px 2px 10px #000;
+}
+
+i {
+  font-weight: 700;
+}
+
+a {
+  color: #000;
+  display: inline-block;
+  padding: 10px;
+  border-radius: 10px;
+  border: 2px solid #000;
+  text-decoration: none;
+  transition: all 0.3s ease;
+}
+
+.box-realtime {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+}
+
+.form-addproduct {
+  display: flex;
+  gap: 5px;
+  flex-direction: column;
+}
+
+.github-session {
+  color: #fff;
+  margin: 0 50px;
+  background-color: #171515;
+
+  i {
+    background-color: #171515;
+  }
+}
+
+.box-login {
+  display: flex;
+  gap: 20px;
+  justify-content: center;
+  flex-direction: column;
+  width: 500px;
+}
+
+button {
+  cursor: pointer;
+  margin: 10px 0;
+  border-radius: 10px;
+  padding: 15px;
+  transition: all 0.4s ease;
+}
+
+button:hover {
+  background: #000;
+  color: #fff;
+}
+
+.btn-form {
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.btn-form:hover {
+  background: #004f0c;
+  color: #fff;
+}
+
+form {
+  padding: 50px;
+}
+
+input {
+  padding: 8px;
+  border-radius: 10px;
+  outline: none;
+  border: 2px solid #000;
+  transition: all 0.3s ease;
+}
+
+input:focus {
+  background-color: #fff;
+  box-shadow: 2px 2px 10px #000;
+}
+
+.cart-view-box {
+  display: flex;
+  justify-content: center;
+}
+
+.cart-view {
+  border: 2px solid #00a6ff;
+  text-align: center;
+  width: 200px;
+}
+
+.cart-view:hover {
+  background: none;
+  color: #2b00ff;
+}
+
+.box-item-cart {
+  display: grid;
+  grid-template-columns: 120px 75px;
+  grid-template-rows: repeat(2, 50px);
+  li {
+    grid-column: 1/2;
+  }
+
+  button {
+    width: fit-content;
+    height: fit-content;
+    font-size: 20px;
+    grid-column: 2/3;
+    grid-row: 1/3;
+  }
+  button:hover {
+    background: none;
+    box-shadow: 2px 2px 10px #ff0000;
+  }
+}
+
+.remove-all-items {
+  background: #9e0000;
+}
+
+.remove-all-items:hover {
+  background: #ff0000;
+  color: #fff;
+}

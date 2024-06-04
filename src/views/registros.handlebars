@@ -1,0 +1,15 @@
+<h2>Registro de Usuarios:</h2>
+
+<form action="/api/sessions/registro" method="post">
+
+  <input type="text" name="nombre" placeholder="Ingrese nombre" />
+  <input type="text" name="apellido" placeholder="Ingrese apellido" />
+  <input type="email" name="email" placeholder="Ingrese email" />
+  <input type="number" name="age" placeholder="Ingrese edad (+=18)" />
+  <input type="password" name="password" placeholder="Ingrese un password" />
+
+  <input type="submit" class="btn-form" value="Registrarse" />
+
+</form>
+
+{{>menu}}

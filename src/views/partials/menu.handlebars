@@ -1,0 +1,24 @@
+<ul>
+  <li>
+    <a href="/">Home <i class="fa fa-home"></i></a>
+  </li>
+
+  {{#if login}}
+    <li>
+      <a href="/products">Ir a listado de productos
+        <i class="fa fa-chevron-right"></i></a>
+    </li>
+    <li>
+      <a href="/realtimeproducts">Ir a listado en tiempo real
+        <i class="fa fa-refresh"></i></a>
+    </li>
+  {{else}}
+    <li>
+      <a href="/registro">Ir a registro</a>
+    </li>
+    <li>
+      <a href="/login">Ir a login</a>
+    </li>
+  {{/if}}
+
+</ul>

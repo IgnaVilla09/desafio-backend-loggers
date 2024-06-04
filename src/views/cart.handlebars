@@ -1,0 +1,33 @@
+<h1>Carrito</h1>
+{{#if cart}}
+  <ul >
+    
+    {{#each cart.products}}
+    <div class="box-item-cart">
+      <li>{{title}} - ${{price}}</li>
+      <li><strong>{{quantity}} unidades</strong></li>
+      <button
+        class="remove-item"
+        data-cart-id-item="{{../cart._id}}"
+        data-producto-id-item="{{productId}}"
+      ><i class="fa fa-trash" style="color:red"></i></button>
+    </div>
+    {{/each}}
+  </ul>
+
+{{else}}
+  <p>No se encontró el carrito.</p>
+{{/if}}
+
+<div class="cart-subtotal">
+  <h3>Subtotal: ${{cart.subtotal}}</h3>
+
+  {{#if (gt cart.subtotal 0)}}
+    <a href="{{cart._id}}/purchase" class="btn-purchase">CONCRETAR COMPRA</a>
+    <button class="remove-all-items" data-cart-id="{{cart._id}}">VACIAR CARRITO</button>
+  {{/if}}
+</div>
+
+<a href="/products">Volver a productos</a>
+
+<script src="/js/cart.js"></script>

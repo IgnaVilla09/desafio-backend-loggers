@@ -1,0 +1,48 @@
+<h1>Lista de productos en tiempo Real</h1>
+<div class="box-realtime">
+  <ul>
+    {{#each products}}
+      <li>{{this.title}} - {{this.description}} - $ {{this.price}} </li>
+    {{/each}}
+
+  </ul>
+  <form action="/api/products" method="post" class="form-addproduct">
+    <label for="title">Título:</label>
+    <input type="text" id="title" name="title" />
+
+    <label for="description">Descripción:</label>
+    <textarea id="description" name="description"></textarea>
+
+    <label for="code">Código:</label>
+    <input type="text" id="code" name="code" />
+
+    <label for="price">Precio:</label>
+    <input type="number" id="price" name="price" step="0.01" />
+
+    <label for="stock">Stock:</label>
+    <input type="number" id="stock" name="stock" min="1" />
+
+    <label for="category">Categoría:</label>
+    <input type="text" id="category" name="category" />
+
+    <label for="thumbnails">Miniaturas:</label>
+    <input type="text" id="thumbnails" name="thumbnails" />
+
+    <label for="status">Estado:</label>
+    <select id="status" name="status" required>
+      <option value="true">Activo</option>
+      <option value="false">Inactivo</option>
+    </select>
+
+    <button id="addProduct" type="submit">Agregar producto</button>
+  </form>
+</div>
+
+<a href="/">Volver al Home <i class="fa fa-home"></i> </a>
+
+<script src="/socket.io/socket.io.js"></script>
+<script>
+  const socket = io(); console.log('Conectado al servidor de Socket.io');
+  socket.on('products', (products) => { console.log('Productos en tiempo real:',
+  products); });
+</script>

@@ -1,0 +1,63 @@
+<div class="box-profile">
+  {{#if usuario.nombre}}
+    <h4>Sesión de {{usuario.nombre}} - email:{{usuario.email}}</h4>
+  {{else}}
+    <h4>Sesión de
+      {{usuario.profileGithub.displayName}}
+      - email:{{usuario.email}}</h4>
+  {{/if}}
+
+  <h4>Rol: {{usuario.role}}</h4>
+
+  <a href="/api/sessions/logout" class="btn-logout"><i
+      class="fa fa-sign-out"
+    ></i>Cerrar sesión</a>
+</div>
+
+<h1>Lista de productos</h1>
+
+<div class="cart-view-box">
+  <a href="api/carts/{{usuario.cartId}}" id="btn-view-cart" class="cart-view">
+    Ver el carrito
+    <i class="fa fa-cart-plus"></i></a>
+</div>
+<ul class="product-list">
+  {{#each products}}
+    <div>
+      <li class="product-list__items">{{this.title}}
+        -
+        {{description}}
+        - $
+        {{price}}
+      </li>
+      <button
+        id="btn-add"
+        class="product-list__items-btn"
+        data-product-id="{{this._id}}"
+      >Agregar al carrito</button>
+    </div>
+  {{/each}}
+
+</ul>
+
+<a href="/realtimeproducts">Ir a listado en tiempo real
+  <i class="fa fa-refresh"></i></a>
+<a href="/">Volver a Home <i class="fa fa-home"></i></a>
+<hr />
+
+{{#if hasPrevPage}}
+  <a href="/products?pagina={{prevPage}}"><i
+      class="fa fa-arrow-circle-left"
+    ></i>
+    Pagina</a>
+{{/if}}
+
+{{#if hasNextPage}}
+  <a href="/products?pagina={{nextPage}}">
+    Pagina
+    <i class="fa fa-arrow-circle-right"></i></a>
+{{/if}}
+
+<a href="/products?pagina={{totalPages}}">Ult. Pagina.</a>
+
+<script src="js/cart.js"></script>

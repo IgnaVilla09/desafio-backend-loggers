@@ -1,0 +1,14 @@
+<h2>Login de Usuarios:</h2>
+
+<a href="/api/sessions/github" class="github-session">Ingresa con GitHub <i class="fa fa-github"></i> </a>
+
+<form action="/api/sessions/login" method="post" class="box-login">
+
+  <input type="email" name="email" placeholder="Ingrese email" />
+  <input type="password" name="password" placeholder="Ingrese un password" />
+
+  <input type="submit" class="btn-form" value="Ingresar" />
+
+</form>
+
+{{>menu}}

@@ -1,0 +1,12 @@
+DATOS DEL .env alojado en "./src/"
+
+PORT=8080
+PERSISTENCE=MONGO
+MODE=production
+MENSAJE=Server Desarrollo
+SECRET=CoderCoder123
+PRUEBA_PORT=3000
+MONGO_URL=mongodb+srv://villafaneigna:CoderCoder@cluster0.oketjqj.mongodb.net/?retryWrites=true&w=majority&dbName=
+DB_NAME=ecommerce
+PASSAPPGOOGLE=aqfccwopupvznsqr
+EMAILGOOGLE=villafaneigna@gmail.com
