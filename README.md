@@ -1,6 +1,6 @@
 # Desafio Coder
 
-Backend para ecommerce. Se aplicaron patrones de diseño (DAO, DTO), mailing, variables de entorno, prueba de errores y mocks.
+Backend para ecommerce. Se aplicaron patrones de diseño (DAO, DTO), mailing, variables de entorno, prueba de errores, mocks y loggers.
 
 ## Deployment
 
@@ -50,6 +50,14 @@ Para visualizar los datos de la session y el usuario conectado se aplico la ruta
 
 ```bash
    http://localhost:8080/api/session/current
+```
+
+#### LOGGERS
+
+Se añadió un endpoint que genera muestra de loggers dependiendo del MODE del .env
+
+```bash
+   http://localhost:8080/loggerTest
 ```
 
 ## PROCESO DE COMPRA
