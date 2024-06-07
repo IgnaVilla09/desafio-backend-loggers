@@ -13,3 +13,8 @@
   level: 'fatal',
   timestamp: '2024-06-07T14:13:32.566Z'
 }
+{
+  message: 'Esto es el error FATAL-CRITICAL',
+  level: 'fatal',
+  timestamp: '2024-06-07T17:35:12.977Z'
+}
