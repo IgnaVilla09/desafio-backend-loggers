@@ -1,0 +1,13 @@
+config:
+  target: "http://localhost:8080"
+  phases:
+    - duration: 10
+      arrivalRate: 40
+scenarios:
+  - flow:
+      - get:
+          url: "/login"
+      - get:
+          url: "/registro"
+      - get:
+          url: "/loggertest"

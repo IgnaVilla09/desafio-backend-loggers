@@ -1,56 +1,15 @@
 {
-  message: 'Error al crear producto, propiedades obligatorias',
+  message: 'Error al eliminar el producto del carrito',
   level: 'fatal',
-  timestamp: '2024-06-04T19:00:29.739Z'
+  timestamp: '2024-06-07T14:11:23.502Z'
 }
 {
-  message: 'Se han detectado args inválidos.\n' +
-    'Argumentos requeridos:\n' +
-    '    - Nombre: tipo string. Se ingresó \n' +
-    '    - Precio: tipo number. Se ingreso \n' +
-    '    - Code: tipo number. Se ingreso \n' +
-    '    - Stock: tipo number. Se ingreso  \n' +
-    'Argumentos opcionales:\n' +
-    '    - Descripción, imágenes, estado y categoría. Se ingreso {"description":"","category":"","thumbnails":"","status":"true"}\n' +
-    '\n' +
-    'Fecha: Tue, 04 Jun 2024 19:00:29 GMT\n' +
-    'Usuario: Ignacio\n' +
-    'Terminal: DESKTOP-TUMNVVU',
+  message: 'Error al eliminar el producto del carrito',
   level: 'fatal',
-  timestamp: '2024-06-04T19:00:29.740Z'
-}
-{
-  message: 'Administrador sin autorización de ejecutar función',
-  level: 'fatal',
-  timestamp: '2024-06-04T19:00:40.344Z'
+  timestamp: '2024-06-07T14:11:30.708Z'
 }
 {
   message: 'Autenticación',
   level: 'fatal',
-  timestamp: '2024-06-04T19:01:03.527Z'
-}
-{
-  message: 'Esto es el error FATAL-CRITICAL',
-  level: 'fatal',
-  timestamp: '2024-06-04T19:15:01.681Z'
-}
-{
-  message: 'Esto es el error FATAL-CRITICAL',
-  level: 'fatal',
-  timestamp: '2024-06-04T19:16:00.168Z'
-}
-{
-  message: 'Esto es el error FATAL-CRITICAL',
-  level: 'fatal',
-  timestamp: '2024-06-04T19:16:15.391Z'
-}
-{
-  message: 'Esto es el error FATAL-CRITICAL',
-  level: 'fatal',
-  timestamp: '2024-06-04T19:16:42.366Z'
-}
-{
-  message: 'Esto es el error FATAL-CRITICAL',
-  level: 'fatal',
-  timestamp: '2024-06-04T19:17:00.368Z'
+  timestamp: '2024-06-07T14:13:32.566Z'
 }
