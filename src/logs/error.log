@@ -473,3 +473,13 @@
     '    at Function.handle (E:\\CursoBackend\\DesafioLoggers\\node_modules\\express\\lib\\router\\index.js:175:3)',
   timestamp: '2024-06-14T19:38:53.342Z'
 }
+{
+  message: 'Error al eliminar el producto del carrito',
+  level: 'fatal',
+  timestamp: '2024-06-14T19:43:49.118Z'
+}
+{
+  message: 'Error al eliminar el producto del carrito',
+  level: 'fatal',
+  timestamp: '2024-06-14T19:44:00.603Z'
+}
