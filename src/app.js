@@ -1,7 +1,5 @@
 import express from "express";
 import mongoose from "mongoose";
-import session from "express-session";
-import MongoStore from "connect-mongo";
 import path from "path";
 import { Server } from "socket.io";
 import { __dirname, logger, middlog } from "./utils.js";
@@ -51,21 +49,9 @@ app.set("views", path.join(__dirname, "views"));
 app.use(middlog);
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
-app.use(
-  session({
-    secret: `${config.SECRET}`,
-    resave: true,
-    saveUninitialized: true,
-    store: MongoStore.create({
-      mongoUrl: `${config.MONGO_URL}${config.DB_NAME}`,
-      ttl: 3600,
-    }),
-  })
-);
 
 initPassport();
 app.use(passport.initialize());
-app.use(passport.session());
 app.use(cookieParser("appCoder"));
 app.use(express.static(path.join(__dirname, "public")));
 

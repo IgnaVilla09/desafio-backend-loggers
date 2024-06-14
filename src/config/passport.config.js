@@ -1,15 +1,46 @@
 import passport from "passport";
 import github from "passport-github2";
+import passportjwt from "passport-jwt";
 import local from "passport-local";
 import { UsuariosManagerMongo } from "../dao/managersMongo/usuariosManager.js";
 import { creaHash, validate } from "../utils.js";
 import { usuariosModelo } from "../dao/models/usuario.modelo.js";
 import cartManagerMongo from "../dao/managersMongo/cartManagerMongo.js";
+import { config } from "./config.js";
 
 const usuariosMDB = new UsuariosManagerMongo();
 const CartManagerMDB = new cartManagerMongo();
 
+const searchToken = (req) => {
+  let token = null;
+
+  if (req.signedCookies.appToken) {
+    token = req.signedCookies.appToken;
+  }
+
+  return token;
+};
+
 export const initPassport = () => {
+  passport.use(
+    "jwt",
+    new passportjwt.Strategy(
+      {
+        secretOrKey: config.SECRET,
+        jwtFromRequest: new passportjwt.ExtractJwt.fromExtractors([
+          searchToken,
+        ]),
+      },
+      async (contToken, done) => {
+        try {
+          return done(null, contToken);
+        } catch (error) {
+          done(error);
+        }
+      }
+    )
+  );
+
   //Estrategia Registro
   passport.use(
     "registro",
@@ -123,13 +154,4 @@ export const initPassport = () => {
       }
     )
   );
-  // SESSION GUARDADAS
-  passport.serializeUser((usuario, done) => {
-    return done(null, usuario._id);
-  });
-
-  passport.deserializeUser(async (id, done) => {
-    let usuario = await usuariosMDB.getBy({ _id: id });
-    return done(null, usuario);
-  });
 };

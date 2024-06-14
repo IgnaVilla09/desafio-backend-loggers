@@ -1,4 +1,5 @@
 import { Router } from "express";
+import passport from "passport";
 import ProductManagerMongo from "../dao/managersMongo/productManagerMongo.js";
 const routerView = Router();
 import { auth } from "../middlewares/auth.js";
@@ -16,9 +17,10 @@ function handleRealTimeProductsSocket(io) {
 }
 
 routerView.get("/", async (req, res) => {
-  //verificar existencia de cookie
   if (req.signedCookies.appToken) {
-    return res.status(200).render("home", { login: req.user });
+    return res
+      .status(200)
+      .render("home", { login: req.signedCookies.appToken });
   } else {
     return res.status(200).render("home");
   }
@@ -26,7 +28,9 @@ routerView.get("/", async (req, res) => {
 
 routerView.get("/registro", (req, res) => {
   if (req.signedCookies.appToken) {
-    return res.status(200).render("registros", { login: req.user });
+    return res
+      .status(200)
+      .render("registros", { login: req.signedCookies.appToken });
   } else {
     return res.status(200).render("registros");
   }
@@ -34,16 +38,33 @@ routerView.get("/registro", (req, res) => {
 
 routerView.get("/login", (req, res) => {
   if (req.signedCookies.appToken) {
-    return res.status(200).render("login", { login: req.user });
+    return res
+      .status(200)
+      .render("login", { login: req.signedCookies.appToken });
   } else {
     return res.status(200).render("login");
   }
 });
 
-routerView.get("/products", auth, viewController.getProduct);
+routerView.get(
+  "/products",
+  passport.authenticate("jwt", { session: false }),
+  auth,
+  viewController.getProduct
+);
 
-routerView.get("/products/:id", auth, viewController.getProductById);
+routerView.get(
+  "/products/:id",
+  passport.authenticate("jwt", { session: false }),
+  auth,
+  viewController.getProductById
+);
 
-routerView.get("/realtimeproducts", auth, viewController.realTime);
+routerView.get(
+  "/realtimeproducts",
+  passport.authenticate("jwt", { session: false }),
+  auth,
+  viewController.realTime
+);
 
 export { routerView, handleRealTimeProductsSocket };

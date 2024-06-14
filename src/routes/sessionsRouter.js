@@ -16,6 +16,7 @@ router.post(
   "/registro",
   passport.authenticate("registro", {
     failureRedirect: "/api/sessions/errorRegistro",
+    session: false,
   }),
   async (req, res) => {
     return res.redirect("/registro?mensaje=registro correcto :D");
@@ -31,6 +32,7 @@ router.post(
   "/login",
   passport.authenticate("login", {
     failureRedirect: "/api/sessions/errorLogin",
+    session: false,
   }),
   async (req, res) => {
     let usuario = req.user; //Obtenemos el user del middleware del passport
@@ -38,7 +40,11 @@ router.post(
     delete usuario.password;
     let token = jwt.sign(usuario, config.SECRET, { expiresIn: "1h" });
 
-    res.cookie("appToken", token, { maxAge: 1000 * 60 * 60, signed: true });
+    res.cookie("appToken", token, {
+      maxAge: 1000 * 60 * 60,
+      signed: true,
+      httpOnly: true,
+    });
     res.setHeader("Content-Type", "application/json");
     return res.redirect("/products");
   }
@@ -53,7 +59,12 @@ router.get("/errorGithub", (req, res) => {
   });
 });
 
-router.get("/github", passport.authenticate("github"), (req, res) => {});
+router.get(
+  "/github",
+  passport.authenticate("jwt", { session: false }),
+  passport.authenticate("github"),
+  (req, res) => {}
+);
 
 router.get(
   "/authGitHub",
