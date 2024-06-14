@@ -18,3 +18,361 @@
   level: 'fatal',
   timestamp: '2024-06-07T17:35:12.977Z'
 }
+{
+  level: 'fatal',
+  message: "Error al verificar la autenticación: Cannot read properties of undefined (reading '_id')",
+  stack: "TypeError: Cannot read properties of undefined (reading '_id')\n" +
+    '    at auth (file:///E:/CursoBackend/DesafioLoggers/src/middlewares/auth.js:17:71)\n' +
+    '    at Layer.handle [as handle_request] (E:\\CursoBackend\\DesafioLoggers\\node_modules\\express\\lib\\router\\layer.js:95:5)\n' +
+    '    at next (E:\\CursoBackend\\DesafioLoggers\\node_modules\\express\\lib\\router\\route.js:149:13)\n' +
+    '    at Route.dispatch (E:\\CursoBackend\\DesafioLoggers\\node_modules\\express\\lib\\router\\route.js:119:3)\n' +
+    '    at Layer.handle [as handle_request] (E:\\CursoBackend\\DesafioLoggers\\node_modules\\express\\lib\\router\\layer.js:95:5)\n' +
+    '    at E:\\CursoBackend\\DesafioLoggers\\node_modules\\express\\lib\\router\\index.js:284:15\n' +
+    '    at Function.process_params (E:\\CursoBackend\\DesafioLoggers\\node_modules\\express\\lib\\router\\index.js:346:12)\n' +
+    '    at next (E:\\CursoBackend\\DesafioLoggers\\node_modules\\express\\lib\\router\\index.js:280:10)\n' +
+    '    at Function.handle (E:\\CursoBackend\\DesafioLoggers\\node_modules\\express\\lib\\router\\index.js:175:3)\n' +
+    '    at router (E:\\CursoBackend\\DesafioLoggers\\node_modules\\express\\lib\\router\\index.js:47:12)',
+  timestamp: '2024-06-14T03:29:54.106Z'
+}
+{
+  name: 'JsonWebTokenError',
+  message: 'Error al verificar la autenticación: invalid algorithm',
+  level: 'fatal',
+  stack: 'JsonWebTokenError: invalid algorithm\n' +
+    '    at E:\\CursoBackend\\DesafioLoggers\\node_modules\\jsonwebtoken\\verify.js:145:19\n' +
+    '    at getSecret (E:\\CursoBackend\\DesafioLoggers\\node_modules\\jsonwebtoken\\verify.js:97:14)\n' +
+    '    at module.exports [as verify] (E:\\CursoBackend\\DesafioLoggers\\node_modules\\jsonwebtoken\\verify.js:101:10)\n' +
+    '    at auth (file:///E:/CursoBackend/DesafioLoggers/src/middlewares/auth.js:18:23)\n' +
+    '    at Layer.handle [as handle_request] (E:\\CursoBackend\\DesafioLoggers\\node_modules\\express\\lib\\router\\layer.js:95:5)\n' +
+    '    at next (E:\\CursoBackend\\DesafioLoggers\\node_modules\\express\\lib\\router\\route.js:149:13)\n' +
+    '    at Route.dispatch (E:\\CursoBackend\\DesafioLoggers\\node_modules\\express\\lib\\router\\route.js:119:3)\n' +
+    '    at Layer.handle [as handle_request] (E:\\CursoBackend\\DesafioLoggers\\node_modules\\express\\lib\\router\\layer.js:95:5)\n' +
+    '    at E:\\CursoBackend\\DesafioLoggers\\node_modules\\express\\lib\\router\\index.js:284:15\n' +
+    '    at Function.process_params (E:\\CursoBackend\\DesafioLoggers\\node_modules\\express\\lib\\router\\index.js:346:12)',
+  timestamp: '2024-06-14T03:35:55.776Z'
+}
+{
+  name: 'JsonWebTokenError',
+  message: 'Error al verificar la autenticación: invalid token',
+  level: 'fatal',
+  stack: 'JsonWebTokenError: invalid token\n' +
+    '    at module.exports [as verify] (E:\\CursoBackend\\DesafioLoggers\\node_modules\\jsonwebtoken\\verify.js:82:17)\n' +
+    '    at auth (file:///E:/CursoBackend/DesafioLoggers/src/middlewares/auth.js:18:23)\n' +
+    '    at Layer.handle [as handle_request] (E:\\CursoBackend\\DesafioLoggers\\node_modules\\express\\lib\\router\\layer.js:95:5)\n' +
+    '    at next (E:\\CursoBackend\\DesafioLoggers\\node_modules\\express\\lib\\router\\route.js:149:13)\n' +
+    '    at Route.dispatch (E:\\CursoBackend\\DesafioLoggers\\node_modules\\express\\lib\\router\\route.js:119:3)\n' +
+    '    at Layer.handle [as handle_request] (E:\\CursoBackend\\DesafioLoggers\\node_modules\\express\\lib\\router\\layer.js:95:5)\n' +
+    '    at E:\\CursoBackend\\DesafioLoggers\\node_modules\\express\\lib\\router\\index.js:284:15\n' +
+    '    at Function.process_params (E:\\CursoBackend\\DesafioLoggers\\node_modules\\express\\lib\\router\\index.js:346:12)\n' +
+    '    at next (E:\\CursoBackend\\DesafioLoggers\\node_modules\\express\\lib\\router\\index.js:280:10)\n' +
+    '    at Function.handle (E:\\CursoBackend\\DesafioLoggers\\node_modules\\express\\lib\\router\\index.js:175:3)',
+  timestamp: '2024-06-14T03:36:39.489Z'
+}
+{
+  message: 'Autenticación',
+  level: 'fatal',
+  timestamp: '2024-06-14T03:44:25.565Z'
+}
+{
+  message: 'Autenticación',
+  level: 'fatal',
+  timestamp: '2024-06-14T04:20:59.337Z'
+}
+{
+  name: 'TokenExpiredError',
+  message: 'Error al verificar la autenticación: jwt expired',
+  expiredAt: 2024-06-14T04:27:11.000Z,
+  level: 'fatal',
+  stack: 'TokenExpiredError: jwt expired\n' +
+    '    at E:\\CursoBackend\\DesafioLoggers\\node_modules\\jsonwebtoken\\verify.js:190:21\n' +
+    '    at getSecret (E:\\CursoBackend\\DesafioLoggers\\node_modules\\jsonwebtoken\\verify.js:97:14)\n' +
+    '    at module.exports [as verify] (E:\\CursoBackend\\DesafioLoggers\\node_modules\\jsonwebtoken\\verify.js:101:10)\n' +
+    '    at verifyToken (file:///E:/CursoBackend/DesafioLoggers/src/middlewares/auth.js:7:21)\n' +
+    '    at auth (file:///E:/CursoBackend/DesafioLoggers/src/middlewares/auth.js:29:16)\n' +
+    '    at Layer.handle [as handle_request] (E:\\CursoBackend\\DesafioLoggers\\node_modules\\express\\lib\\router\\layer.js:95:5)\n' +
+    '    at next (E:\\CursoBackend\\DesafioLoggers\\node_modules\\express\\lib\\router\\route.js:149:13)\n' +
+    '    at Route.dispatch (E:\\CursoBackend\\DesafioLoggers\\node_modules\\express\\lib\\router\\route.js:119:3)\n' +
+    '    at Layer.handle [as handle_request] (E:\\CursoBackend\\DesafioLoggers\\node_modules\\express\\lib\\router\\layer.js:95:5)\n' +
+    '    at E:\\CursoBackend\\DesafioLoggers\\node_modules\\express\\lib\\router\\index.js:284:15',
+  timestamp: '2024-06-14T04:29:40.825Z'
+}
+{
+  level: 'fatal',
+  message: 'Error al verificar la autenticación:',
+  timestamp: '2024-06-14T04:30:04.657Z'
+}
+{
+  level: 'fatal',
+  message: 'Error al verificar la autenticación:',
+  timestamp: '2024-06-14T04:30:19.797Z'
+}
+{
+  message: 'Error: Login sessions require session support. Did you forget to use `express-session` middleware?\n' +
+    '    at SessionStrategy.authenticate (E:\\CursoBackend\\DesafioLoggers\\node_modules\\passport\\lib\\strategies\\session.js:97:41)\n' +
+    '    at attempt (E:\\CursoBackend\\DesafioLoggers\\node_modules\\passport\\lib\\middleware\\authenticate.js:378:16)\n' +
+    '    at authenticate (E:\\CursoBackend\\DesafioLoggers\\node_modules\\passport\\lib\\middleware\\authenticate.js:379:7)\n' +
+    '    at Layer.handle [as handle_request] (E:\\CursoBackend\\DesafioLoggers\\node_modules\\express\\lib\\router\\layer.js:95:5)\n' +
+    '    at trim_prefix (E:\\CursoBackend\\DesafioLoggers\\node_modules\\express\\lib\\router\\index.js:328:13)\n' +
+    '    at E:\\CursoBackend\\DesafioLoggers\\node_modules\\express\\lib\\router\\index.js:286:9\n' +
+    '    at Function.process_params (E:\\CursoBackend\\DesafioLoggers\\node_modules\\express\\lib\\router\\index.js:346:12)\n' +
+    '    at next (E:\\CursoBackend\\DesafioLoggers\\node_modules\\express\\lib\\router\\index.js:280:10)\n' +
+    '    at initialize (E:\\CursoBackend\\DesafioLoggers\\node_modules\\passport\\lib\\middleware\\initialize.js:98:5)\n' +
+    '    at Layer.handle [as handle_request] (E:\\CursoBackend\\DesafioLoggers\\node_modules\\express\\lib\\router\\layer.js:95:5)',
+  level: 'fatal',
+  timestamp: '2024-06-14T05:44:34.380Z'
+}
+{
+  message: 'Error: Login sessions require session support. Did you forget to use `express-session` middleware?\n' +
+    '    at SessionStrategy.authenticate (E:\\CursoBackend\\DesafioLoggers\\node_modules\\passport\\lib\\strategies\\session.js:97:41)\n' +
+    '    at attempt (E:\\CursoBackend\\DesafioLoggers\\node_modules\\passport\\lib\\middleware\\authenticate.js:378:16)\n' +
+    '    at authenticate (E:\\CursoBackend\\DesafioLoggers\\node_modules\\passport\\lib\\middleware\\authenticate.js:379:7)\n' +
+    '    at Layer.handle [as handle_request] (E:\\CursoBackend\\DesafioLoggers\\node_modules\\express\\lib\\router\\layer.js:95:5)\n' +
+    '    at trim_prefix (E:\\CursoBackend\\DesafioLoggers\\node_modules\\express\\lib\\router\\index.js:328:13)\n' +
+    '    at E:\\CursoBackend\\DesafioLoggers\\node_modules\\express\\lib\\router\\index.js:286:9\n' +
+    '    at Function.process_params (E:\\CursoBackend\\DesafioLoggers\\node_modules\\express\\lib\\router\\index.js:346:12)\n' +
+    '    at next (E:\\CursoBackend\\DesafioLoggers\\node_modules\\express\\lib\\router\\index.js:280:10)\n' +
+    '    at initialize (E:\\CursoBackend\\DesafioLoggers\\node_modules\\passport\\lib\\middleware\\initialize.js:98:5)\n' +
+    '    at Layer.handle [as handle_request] (E:\\CursoBackend\\DesafioLoggers\\node_modules\\express\\lib\\router\\layer.js:95:5)',
+  level: 'fatal',
+  timestamp: '2024-06-14T05:44:34.463Z'
+}
+{
+  message: 'Error: Login sessions require session support. Did you forget to use `express-session` middleware?\n' +
+    '    at SessionStrategy.authenticate (E:\\CursoBackend\\DesafioLoggers\\node_modules\\passport\\lib\\strategies\\session.js:97:41)\n' +
+    '    at attempt (E:\\CursoBackend\\DesafioLoggers\\node_modules\\passport\\lib\\middleware\\authenticate.js:378:16)\n' +
+    '    at authenticate (E:\\CursoBackend\\DesafioLoggers\\node_modules\\passport\\lib\\middleware\\authenticate.js:379:7)\n' +
+    '    at Layer.handle [as handle_request] (E:\\CursoBackend\\DesafioLoggers\\node_modules\\express\\lib\\router\\layer.js:95:5)\n' +
+    '    at trim_prefix (E:\\CursoBackend\\DesafioLoggers\\node_modules\\express\\lib\\router\\index.js:328:13)\n' +
+    '    at E:\\CursoBackend\\DesafioLoggers\\node_modules\\express\\lib\\router\\index.js:286:9\n' +
+    '    at Function.process_params (E:\\CursoBackend\\DesafioLoggers\\node_modules\\express\\lib\\router\\index.js:346:12)\n' +
+    '    at next (E:\\CursoBackend\\DesafioLoggers\\node_modules\\express\\lib\\router\\index.js:280:10)\n' +
+    '    at initialize (E:\\CursoBackend\\DesafioLoggers\\node_modules\\passport\\lib\\middleware\\initialize.js:98:5)\n' +
+    '    at Layer.handle [as handle_request] (E:\\CursoBackend\\DesafioLoggers\\node_modules\\express\\lib\\router\\layer.js:95:5)',
+  level: 'fatal',
+  timestamp: '2024-06-14T05:51:07.208Z'
+}
+{
+  message: 'Error: Login sessions require session support. Did you forget to use `express-session` middleware?\n' +
+    '    at SessionStrategy.authenticate (E:\\CursoBackend\\DesafioLoggers\\node_modules\\passport\\lib\\strategies\\session.js:97:41)\n' +
+    '    at attempt (E:\\CursoBackend\\DesafioLoggers\\node_modules\\passport\\lib\\middleware\\authenticate.js:378:16)\n' +
+    '    at authenticate (E:\\CursoBackend\\DesafioLoggers\\node_modules\\passport\\lib\\middleware\\authenticate.js:379:7)\n' +
+    '    at Layer.handle [as handle_request] (E:\\CursoBackend\\DesafioLoggers\\node_modules\\express\\lib\\router\\layer.js:95:5)\n' +
+    '    at trim_prefix (E:\\CursoBackend\\DesafioLoggers\\node_modules\\express\\lib\\router\\index.js:328:13)\n' +
+    '    at E:\\CursoBackend\\DesafioLoggers\\node_modules\\express\\lib\\router\\index.js:286:9\n' +
+    '    at Function.process_params (E:\\CursoBackend\\DesafioLoggers\\node_modules\\express\\lib\\router\\index.js:346:12)\n' +
+    '    at next (E:\\CursoBackend\\DesafioLoggers\\node_modules\\express\\lib\\router\\index.js:280:10)\n' +
+    '    at initialize (E:\\CursoBackend\\DesafioLoggers\\node_modules\\passport\\lib\\middleware\\initialize.js:98:5)\n' +
+    '    at Layer.handle [as handle_request] (E:\\CursoBackend\\DesafioLoggers\\node_modules\\express\\lib\\router\\layer.js:95:5)',
+  level: 'fatal',
+  timestamp: '2024-06-14T05:51:08.294Z'
+}
+{
+  message: 'Error: Login sessions require session support. Did you forget to use `express-session` middleware?\n' +
+    '    at SessionStrategy.authenticate (E:\\CursoBackend\\DesafioLoggers\\node_modules\\passport\\lib\\strategies\\session.js:97:41)\n' +
+    '    at attempt (E:\\CursoBackend\\DesafioLoggers\\node_modules\\passport\\lib\\middleware\\authenticate.js:378:16)\n' +
+    '    at authenticate (E:\\CursoBackend\\DesafioLoggers\\node_modules\\passport\\lib\\middleware\\authenticate.js:379:7)\n' +
+    '    at Layer.handle [as handle_request] (E:\\CursoBackend\\DesafioLoggers\\node_modules\\express\\lib\\router\\layer.js:95:5)\n' +
+    '    at trim_prefix (E:\\CursoBackend\\DesafioLoggers\\node_modules\\express\\lib\\router\\index.js:328:13)\n' +
+    '    at E:\\CursoBackend\\DesafioLoggers\\node_modules\\express\\lib\\router\\index.js:286:9\n' +
+    '    at Function.process_params (E:\\CursoBackend\\DesafioLoggers\\node_modules\\express\\lib\\router\\index.js:346:12)\n' +
+    '    at next (E:\\CursoBackend\\DesafioLoggers\\node_modules\\express\\lib\\router\\index.js:280:10)\n' +
+    '    at initialize (E:\\CursoBackend\\DesafioLoggers\\node_modules\\passport\\lib\\middleware\\initialize.js:98:5)\n' +
+    '    at Layer.handle [as handle_request] (E:\\CursoBackend\\DesafioLoggers\\node_modules\\express\\lib\\router\\layer.js:95:5)',
+  level: 'fatal',
+  timestamp: '2024-06-14T05:51:08.365Z'
+}
+{
+  message: 'Error: Login sessions require session support. Did you forget to use `express-session` middleware?\n' +
+    '    at SessionStrategy.authenticate (E:\\CursoBackend\\DesafioLoggers\\node_modules\\passport\\lib\\strategies\\session.js:97:41)\n' +
+    '    at attempt (E:\\CursoBackend\\DesafioLoggers\\node_modules\\passport\\lib\\middleware\\authenticate.js:378:16)\n' +
+    '    at authenticate (E:\\CursoBackend\\DesafioLoggers\\node_modules\\passport\\lib\\middleware\\authenticate.js:379:7)\n' +
+    '    at Layer.handle [as handle_request] (E:\\CursoBackend\\DesafioLoggers\\node_modules\\express\\lib\\router\\layer.js:95:5)\n' +
+    '    at trim_prefix (E:\\CursoBackend\\DesafioLoggers\\node_modules\\express\\lib\\router\\index.js:328:13)\n' +
+    '    at E:\\CursoBackend\\DesafioLoggers\\node_modules\\express\\lib\\router\\index.js:286:9\n' +
+    '    at Function.process_params (E:\\CursoBackend\\DesafioLoggers\\node_modules\\express\\lib\\router\\index.js:346:12)\n' +
+    '    at next (E:\\CursoBackend\\DesafioLoggers\\node_modules\\express\\lib\\router\\index.js:280:10)\n' +
+    '    at initialize (E:\\CursoBackend\\DesafioLoggers\\node_modules\\passport\\lib\\middleware\\initialize.js:98:5)\n' +
+    '    at Layer.handle [as handle_request] (E:\\CursoBackend\\DesafioLoggers\\node_modules\\express\\lib\\router\\layer.js:95:5)',
+  level: 'fatal',
+  timestamp: '2024-06-14T05:51:35.015Z'
+}
+{
+  message: 'Error: Login sessions require session support. Did you forget to use `express-session` middleware?\n' +
+    '    at SessionStrategy.authenticate (E:\\CursoBackend\\DesafioLoggers\\node_modules\\passport\\lib\\strategies\\session.js:97:41)\n' +
+    '    at attempt (E:\\CursoBackend\\DesafioLoggers\\node_modules\\passport\\lib\\middleware\\authenticate.js:378:16)\n' +
+    '    at authenticate (E:\\CursoBackend\\DesafioLoggers\\node_modules\\passport\\lib\\middleware\\authenticate.js:379:7)\n' +
+    '    at Layer.handle [as handle_request] (E:\\CursoBackend\\DesafioLoggers\\node_modules\\express\\lib\\router\\layer.js:95:5)\n' +
+    '    at trim_prefix (E:\\CursoBackend\\DesafioLoggers\\node_modules\\express\\lib\\router\\index.js:328:13)\n' +
+    '    at E:\\CursoBackend\\DesafioLoggers\\node_modules\\express\\lib\\router\\index.js:286:9\n' +
+    '    at Function.process_params (E:\\CursoBackend\\DesafioLoggers\\node_modules\\express\\lib\\router\\index.js:346:12)\n' +
+    '    at next (E:\\CursoBackend\\DesafioLoggers\\node_modules\\express\\lib\\router\\index.js:280:10)\n' +
+    '    at initialize (E:\\CursoBackend\\DesafioLoggers\\node_modules\\passport\\lib\\middleware\\initialize.js:98:5)\n' +
+    '    at Layer.handle [as handle_request] (E:\\CursoBackend\\DesafioLoggers\\node_modules\\express\\lib\\router\\layer.js:95:5)',
+  level: 'fatal',
+  timestamp: '2024-06-14T05:51:35.083Z'
+}
+{
+  message: 'Error: Login sessions require session support. Did you forget to use `express-session` middleware?\n' +
+    '    at SessionStrategy.authenticate (E:\\CursoBackend\\DesafioLoggers\\node_modules\\passport\\lib\\strategies\\session.js:97:41)\n' +
+    '    at attempt (E:\\CursoBackend\\DesafioLoggers\\node_modules\\passport\\lib\\middleware\\authenticate.js:378:16)\n' +
+    '    at authenticate (E:\\CursoBackend\\DesafioLoggers\\node_modules\\passport\\lib\\middleware\\authenticate.js:379:7)\n' +
+    '    at Layer.handle [as handle_request] (E:\\CursoBackend\\DesafioLoggers\\node_modules\\express\\lib\\router\\layer.js:95:5)\n' +
+    '    at trim_prefix (E:\\CursoBackend\\DesafioLoggers\\node_modules\\express\\lib\\router\\index.js:328:13)\n' +
+    '    at E:\\CursoBackend\\DesafioLoggers\\node_modules\\express\\lib\\router\\index.js:286:9\n' +
+    '    at Function.process_params (E:\\CursoBackend\\DesafioLoggers\\node_modules\\express\\lib\\router\\index.js:346:12)\n' +
+    '    at next (E:\\CursoBackend\\DesafioLoggers\\node_modules\\express\\lib\\router\\index.js:280:10)\n' +
+    '    at initialize (E:\\CursoBackend\\DesafioLoggers\\node_modules\\passport\\lib\\middleware\\initialize.js:98:5)\n' +
+    '    at Layer.handle [as handle_request] (E:\\CursoBackend\\DesafioLoggers\\node_modules\\express\\lib\\router\\layer.js:95:5)',
+  level: 'fatal',
+  timestamp: '2024-06-14T05:51:43.074Z'
+}
+{
+  message: 'Error: Login sessions require session support. Did you forget to use `express-session` middleware?\n' +
+    '    at SessionStrategy.authenticate (E:\\CursoBackend\\DesafioLoggers\\node_modules\\passport\\lib\\strategies\\session.js:97:41)\n' +
+    '    at attempt (E:\\CursoBackend\\DesafioLoggers\\node_modules\\passport\\lib\\middleware\\authenticate.js:378:16)\n' +
+    '    at authenticate (E:\\CursoBackend\\DesafioLoggers\\node_modules\\passport\\lib\\middleware\\authenticate.js:379:7)\n' +
+    '    at Layer.handle [as handle_request] (E:\\CursoBackend\\DesafioLoggers\\node_modules\\express\\lib\\router\\layer.js:95:5)\n' +
+    '    at trim_prefix (E:\\CursoBackend\\DesafioLoggers\\node_modules\\express\\lib\\router\\index.js:328:13)\n' +
+    '    at E:\\CursoBackend\\DesafioLoggers\\node_modules\\express\\lib\\router\\index.js:286:9\n' +
+    '    at Function.process_params (E:\\CursoBackend\\DesafioLoggers\\node_modules\\express\\lib\\router\\index.js:346:12)\n' +
+    '    at next (E:\\CursoBackend\\DesafioLoggers\\node_modules\\express\\lib\\router\\index.js:280:10)\n' +
+    '    at initialize (E:\\CursoBackend\\DesafioLoggers\\node_modules\\passport\\lib\\middleware\\initialize.js:98:5)\n' +
+    '    at Layer.handle [as handle_request] (E:\\CursoBackend\\DesafioLoggers\\node_modules\\express\\lib\\router\\layer.js:95:5)',
+  level: 'fatal',
+  timestamp: '2024-06-14T05:51:43.139Z'
+}
+{
+  message: 'Error: Login sessions require session support. Did you forget to use `express-session` middleware?\n' +
+    '    at SessionStrategy.authenticate (E:\\CursoBackend\\DesafioLoggers\\node_modules\\passport\\lib\\strategies\\session.js:97:41)\n' +
+    '    at attempt (E:\\CursoBackend\\DesafioLoggers\\node_modules\\passport\\lib\\middleware\\authenticate.js:378:16)\n' +
+    '    at authenticate (E:\\CursoBackend\\DesafioLoggers\\node_modules\\passport\\lib\\middleware\\authenticate.js:379:7)\n' +
+    '    at Layer.handle [as handle_request] (E:\\CursoBackend\\DesafioLoggers\\node_modules\\express\\lib\\router\\layer.js:95:5)\n' +
+    '    at trim_prefix (E:\\CursoBackend\\DesafioLoggers\\node_modules\\express\\lib\\router\\index.js:328:13)\n' +
+    '    at E:\\CursoBackend\\DesafioLoggers\\node_modules\\express\\lib\\router\\index.js:286:9\n' +
+    '    at Function.process_params (E:\\CursoBackend\\DesafioLoggers\\node_modules\\express\\lib\\router\\index.js:346:12)\n' +
+    '    at next (E:\\CursoBackend\\DesafioLoggers\\node_modules\\express\\lib\\router\\index.js:280:10)\n' +
+    '    at initialize (E:\\CursoBackend\\DesafioLoggers\\node_modules\\passport\\lib\\middleware\\initialize.js:98:5)\n' +
+    '    at Layer.handle [as handle_request] (E:\\CursoBackend\\DesafioLoggers\\node_modules\\express\\lib\\router\\layer.js:95:5)',
+  level: 'fatal',
+  timestamp: '2024-06-14T05:51:58.123Z'
+}
+{
+  message: 'Error: Login sessions require session support. Did you forget to use `express-session` middleware?\n' +
+    '    at SessionStrategy.authenticate (E:\\CursoBackend\\DesafioLoggers\\node_modules\\passport\\lib\\strategies\\session.js:97:41)\n' +
+    '    at attempt (E:\\CursoBackend\\DesafioLoggers\\node_modules\\passport\\lib\\middleware\\authenticate.js:378:16)\n' +
+    '    at authenticate (E:\\CursoBackend\\DesafioLoggers\\node_modules\\passport\\lib\\middleware\\authenticate.js:379:7)\n' +
+    '    at Layer.handle [as handle_request] (E:\\CursoBackend\\DesafioLoggers\\node_modules\\express\\lib\\router\\layer.js:95:5)\n' +
+    '    at trim_prefix (E:\\CursoBackend\\DesafioLoggers\\node_modules\\express\\lib\\router\\index.js:328:13)\n' +
+    '    at E:\\CursoBackend\\DesafioLoggers\\node_modules\\express\\lib\\router\\index.js:286:9\n' +
+    '    at Function.process_params (E:\\CursoBackend\\DesafioLoggers\\node_modules\\express\\lib\\router\\index.js:346:12)\n' +
+    '    at next (E:\\CursoBackend\\DesafioLoggers\\node_modules\\express\\lib\\router\\index.js:280:10)\n' +
+    '    at initialize (E:\\CursoBackend\\DesafioLoggers\\node_modules\\passport\\lib\\middleware\\initialize.js:98:5)\n' +
+    '    at Layer.handle [as handle_request] (E:\\CursoBackend\\DesafioLoggers\\node_modules\\express\\lib\\router\\layer.js:95:5)',
+  level: 'fatal',
+  timestamp: '2024-06-14T05:51:58.189Z'
+}
+{
+  message: 'Error: Login sessions require session support. Did you forget to use `express-session` middleware?\n' +
+    '    at SessionStrategy.authenticate (E:\\CursoBackend\\DesafioLoggers\\node_modules\\passport\\lib\\strategies\\session.js:97:41)\n' +
+    '    at attempt (E:\\CursoBackend\\DesafioLoggers\\node_modules\\passport\\lib\\middleware\\authenticate.js:378:16)\n' +
+    '    at authenticate (E:\\CursoBackend\\DesafioLoggers\\node_modules\\passport\\lib\\middleware\\authenticate.js:379:7)\n' +
+    '    at Layer.handle [as handle_request] (E:\\CursoBackend\\DesafioLoggers\\node_modules\\express\\lib\\router\\layer.js:95:5)\n' +
+    '    at trim_prefix (E:\\CursoBackend\\DesafioLoggers\\node_modules\\express\\lib\\router\\index.js:328:13)\n' +
+    '    at E:\\CursoBackend\\DesafioLoggers\\node_modules\\express\\lib\\router\\index.js:286:9\n' +
+    '    at Function.process_params (E:\\CursoBackend\\DesafioLoggers\\node_modules\\express\\lib\\router\\index.js:346:12)\n' +
+    '    at next (E:\\CursoBackend\\DesafioLoggers\\node_modules\\express\\lib\\router\\index.js:280:10)\n' +
+    '    at initialize (E:\\CursoBackend\\DesafioLoggers\\node_modules\\passport\\lib\\middleware\\initialize.js:98:5)\n' +
+    '    at Layer.handle [as handle_request] (E:\\CursoBackend\\DesafioLoggers\\node_modules\\express\\lib\\router\\layer.js:95:5)',
+  level: 'fatal',
+  timestamp: '2024-06-14T06:04:15.072Z'
+}
+{
+  message: 'Error: Login sessions require session support. Did you forget to use `express-session` middleware?\n' +
+    '    at SessionStrategy.authenticate (E:\\CursoBackend\\DesafioLoggers\\node_modules\\passport\\lib\\strategies\\session.js:97:41)\n' +
+    '    at attempt (E:\\CursoBackend\\DesafioLoggers\\node_modules\\passport\\lib\\middleware\\authenticate.js:378:16)\n' +
+    '    at authenticate (E:\\CursoBackend\\DesafioLoggers\\node_modules\\passport\\lib\\middleware\\authenticate.js:379:7)\n' +
+    '    at Layer.handle [as handle_request] (E:\\CursoBackend\\DesafioLoggers\\node_modules\\express\\lib\\router\\layer.js:95:5)\n' +
+    '    at trim_prefix (E:\\CursoBackend\\DesafioLoggers\\node_modules\\express\\lib\\router\\index.js:328:13)\n' +
+    '    at E:\\CursoBackend\\DesafioLoggers\\node_modules\\express\\lib\\router\\index.js:286:9\n' +
+    '    at Function.process_params (E:\\CursoBackend\\DesafioLoggers\\node_modules\\express\\lib\\router\\index.js:346:12)\n' +
+    '    at next (E:\\CursoBackend\\DesafioLoggers\\node_modules\\express\\lib\\router\\index.js:280:10)\n' +
+    '    at initialize (E:\\CursoBackend\\DesafioLoggers\\node_modules\\passport\\lib\\middleware\\initialize.js:98:5)\n' +
+    '    at Layer.handle [as handle_request] (E:\\CursoBackend\\DesafioLoggers\\node_modules\\express\\lib\\router\\layer.js:95:5)',
+  level: 'fatal',
+  timestamp: '2024-06-14T06:04:15.146Z'
+}
+{
+  message: 'Error: Login sessions require session support. Did you forget to use `express-session` middleware?\n' +
+    '    at SessionStrategy.authenticate (E:\\CursoBackend\\DesafioLoggers\\node_modules\\passport\\lib\\strategies\\session.js:97:41)\n' +
+    '    at attempt (E:\\CursoBackend\\DesafioLoggers\\node_modules\\passport\\lib\\middleware\\authenticate.js:378:16)\n' +
+    '    at authenticate (E:\\CursoBackend\\DesafioLoggers\\node_modules\\passport\\lib\\middleware\\authenticate.js:379:7)\n' +
+    '    at Layer.handle [as handle_request] (E:\\CursoBackend\\DesafioLoggers\\node_modules\\express\\lib\\router\\layer.js:95:5)\n' +
+    '    at trim_prefix (E:\\CursoBackend\\DesafioLoggers\\node_modules\\express\\lib\\router\\index.js:328:13)\n' +
+    '    at E:\\CursoBackend\\DesafioLoggers\\node_modules\\express\\lib\\router\\index.js:286:9\n' +
+    '    at Function.process_params (E:\\CursoBackend\\DesafioLoggers\\node_modules\\express\\lib\\router\\index.js:346:12)\n' +
+    '    at next (E:\\CursoBackend\\DesafioLoggers\\node_modules\\express\\lib\\router\\index.js:280:10)\n' +
+    '    at initialize (E:\\CursoBackend\\DesafioLoggers\\node_modules\\passport\\lib\\middleware\\initialize.js:98:5)\n' +
+    '    at Layer.handle [as handle_request] (E:\\CursoBackend\\DesafioLoggers\\node_modules\\express\\lib\\router\\layer.js:95:5)',
+  level: 'fatal',
+  timestamp: '2024-06-14T06:04:38.976Z'
+}
+{
+  message: 'Error: Login sessions require session support. Did you forget to use `express-session` middleware?\n' +
+    '    at SessionStrategy.authenticate (E:\\CursoBackend\\DesafioLoggers\\node_modules\\passport\\lib\\strategies\\session.js:97:41)\n' +
+    '    at attempt (E:\\CursoBackend\\DesafioLoggers\\node_modules\\passport\\lib\\middleware\\authenticate.js:378:16)\n' +
+    '    at authenticate (E:\\CursoBackend\\DesafioLoggers\\node_modules\\passport\\lib\\middleware\\authenticate.js:379:7)\n' +
+    '    at Layer.handle [as handle_request] (E:\\CursoBackend\\DesafioLoggers\\node_modules\\express\\lib\\router\\layer.js:95:5)\n' +
+    '    at trim_prefix (E:\\CursoBackend\\DesafioLoggers\\node_modules\\express\\lib\\router\\index.js:328:13)\n' +
+    '    at E:\\CursoBackend\\DesafioLoggers\\node_modules\\express\\lib\\router\\index.js:286:9\n' +
+    '    at Function.process_params (E:\\CursoBackend\\DesafioLoggers\\node_modules\\express\\lib\\router\\index.js:346:12)\n' +
+    '    at next (E:\\CursoBackend\\DesafioLoggers\\node_modules\\express\\lib\\router\\index.js:280:10)\n' +
+    '    at initialize (E:\\CursoBackend\\DesafioLoggers\\node_modules\\passport\\lib\\middleware\\initialize.js:98:5)\n' +
+    '    at Layer.handle [as handle_request] (E:\\CursoBackend\\DesafioLoggers\\node_modules\\express\\lib\\router\\layer.js:95:5)',
+  level: 'fatal',
+  timestamp: '2024-06-14T06:04:39.983Z'
+}
+{
+  message: 'Error: Login sessions require session support. Did you forget to use `express-session` middleware?\n' +
+    '    at SessionStrategy.authenticate (E:\\CursoBackend\\DesafioLoggers\\node_modules\\passport\\lib\\strategies\\session.js:97:41)\n' +
+    '    at attempt (E:\\CursoBackend\\DesafioLoggers\\node_modules\\passport\\lib\\middleware\\authenticate.js:378:16)\n' +
+    '    at authenticate (E:\\CursoBackend\\DesafioLoggers\\node_modules\\passport\\lib\\middleware\\authenticate.js:379:7)\n' +
+    '    at Layer.handle [as handle_request] (E:\\CursoBackend\\DesafioLoggers\\node_modules\\express\\lib\\router\\layer.js:95:5)\n' +
+    '    at trim_prefix (E:\\CursoBackend\\DesafioLoggers\\node_modules\\express\\lib\\router\\index.js:328:13)\n' +
+    '    at E:\\CursoBackend\\DesafioLoggers\\node_modules\\express\\lib\\router\\index.js:286:9\n' +
+    '    at Function.process_params (E:\\CursoBackend\\DesafioLoggers\\node_modules\\express\\lib\\router\\index.js:346:12)\n' +
+    '    at next (E:\\CursoBackend\\DesafioLoggers\\node_modules\\express\\lib\\router\\index.js:280:10)\n' +
+    '    at initialize (E:\\CursoBackend\\DesafioLoggers\\node_modules\\passport\\lib\\middleware\\initialize.js:98:5)\n' +
+    '    at Layer.handle [as handle_request] (E:\\CursoBackend\\DesafioLoggers\\node_modules\\express\\lib\\router\\layer.js:95:5)',
+  level: 'fatal',
+  timestamp: '2024-06-14T06:04:40.541Z'
+}
+{
+  message: 'Error: Login sessions require session support. Did you forget to use `express-session` middleware?\n' +
+    '    at SessionStrategy.authenticate (E:\\CursoBackend\\DesafioLoggers\\node_modules\\passport\\lib\\strategies\\session.js:97:41)\n' +
+    '    at attempt (E:\\CursoBackend\\DesafioLoggers\\node_modules\\passport\\lib\\middleware\\authenticate.js:378:16)\n' +
+    '    at authenticate (E:\\CursoBackend\\DesafioLoggers\\node_modules\\passport\\lib\\middleware\\authenticate.js:379:7)\n' +
+    '    at Layer.handle [as handle_request] (E:\\CursoBackend\\DesafioLoggers\\node_modules\\express\\lib\\router\\layer.js:95:5)\n' +
+    '    at trim_prefix (E:\\CursoBackend\\DesafioLoggers\\node_modules\\express\\lib\\router\\index.js:328:13)\n' +
+    '    at E:\\CursoBackend\\DesafioLoggers\\node_modules\\express\\lib\\router\\index.js:286:9\n' +
+    '    at Function.process_params (E:\\CursoBackend\\DesafioLoggers\\node_modules\\express\\lib\\router\\index.js:346:12)\n' +
+    '    at next (E:\\CursoBackend\\DesafioLoggers\\node_modules\\express\\lib\\router\\index.js:280:10)\n' +
+    '    at initialize (E:\\CursoBackend\\DesafioLoggers\\node_modules\\passport\\lib\\middleware\\initialize.js:98:5)\n' +
+    '    at Layer.handle [as handle_request] (E:\\CursoBackend\\DesafioLoggers\\node_modules\\express\\lib\\router\\layer.js:95:5)',
+  level: 'fatal',
+  timestamp: '2024-06-14T06:04:46.834Z'
+}
+{
+  message: 'Error: Login sessions require session support. Did you forget to use `express-session` middleware?\n' +
+    '    at SessionStrategy.authenticate (E:\\CursoBackend\\DesafioLoggers\\node_modules\\passport\\lib\\strategies\\session.js:97:41)\n' +
+    '    at attempt (E:\\CursoBackend\\DesafioLoggers\\node_modules\\passport\\lib\\middleware\\authenticate.js:378:16)\n' +
+    '    at authenticate (E:\\CursoBackend\\DesafioLoggers\\node_modules\\passport\\lib\\middleware\\authenticate.js:379:7)\n' +
+    '    at Layer.handle [as handle_request] (E:\\CursoBackend\\DesafioLoggers\\node_modules\\express\\lib\\router\\layer.js:95:5)\n' +
+    '    at trim_prefix (E:\\CursoBackend\\DesafioLoggers\\node_modules\\express\\lib\\router\\index.js:328:13)\n' +
+    '    at E:\\CursoBackend\\DesafioLoggers\\node_modules\\express\\lib\\router\\index.js:286:9\n' +
+    '    at Function.process_params (E:\\CursoBackend\\DesafioLoggers\\node_modules\\express\\lib\\router\\index.js:346:12)\n' +
+    '    at next (E:\\CursoBackend\\DesafioLoggers\\node_modules\\express\\lib\\router\\index.js:280:10)\n' +
+    '    at initialize (E:\\CursoBackend\\DesafioLoggers\\node_modules\\passport\\lib\\middleware\\initialize.js:98:5)\n' +
+    '    at Layer.handle [as handle_request] (E:\\CursoBackend\\DesafioLoggers\\node_modules\\express\\lib\\router\\layer.js:95:5)',
+  level: 'fatal',
+  timestamp: '2024-06-14T06:04:46.915Z'
+}

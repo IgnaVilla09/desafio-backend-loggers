@@ -6,6 +6,8 @@ import { config } from "./config/config.js";
 
 const __dirname = dirname(fileURLToPath(import.meta.url));
 
+export const SECRET = "CoderKey";
+
 export const creaHash = (password) =>
   bcrypt.hashSync(password, bcrypt.genSaltSync(10));
 export const validate = (usuario, password) =>

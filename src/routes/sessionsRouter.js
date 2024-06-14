@@ -1,7 +1,9 @@
 import { Router } from "express";
 import passport from "passport";
+import jwt from "jsonwebtoken";
 import { usuariosModelo } from "../dao/models/usuario.modelo.js";
 import { UsuarioDTO } from "../dto/usuarioDTO.js";
+import { SECRET } from "../utils.js";
 export const router = Router();
 
 //Registro
@@ -31,11 +33,16 @@ router.post(
   }),
   async (req, res) => {
     let usuario = req.user; //Obtenemos el user del middleware del passport
+    let token = jwt.sign(usuario, SECRET, { expiresIn: "1h" });
+
     usuario = { ...usuario };
     delete usuario.password;
-    req.session.usuario = usuario;
+    req.user = usuario;
     res.setHeader("Content-Type", "application/json");
-    return res.redirect("/products");
+    return res.redirect("/products?token=" + token);
+
+    // res.setHeader("Content-Type", "application/json");
+    // return res.status(200).json({ usuario: usuario, token });
   }
 );
 
@@ -57,25 +64,13 @@ router.get(
       "/api/sessions/errorGithub?mensaje=Error en autenticación con github",
   }),
   (req, res) => {
-    req.session.usuario = req.user;
-
     res.setHeader("Content-Type", "application/json");
     return res.redirect("/products");
   }
 );
-
-//Logout
+// Logout
 router.get("/logout", (req, res) => {
-  req.session.destroy((e) => {
-    if (e) {
-      res.setHeader("Content-Type", "application/json");
-      return res.status(500).json({
-        error: `Error inesperado en el servidor - Intente más tarde, o contacte a su administrador`,
-        detalle: `${e.message}`,
-      });
-    }
-  });
-
+  res.clearCookie("token");
   return res.redirect("/");
 });
 

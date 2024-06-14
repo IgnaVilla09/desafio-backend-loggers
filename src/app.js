@@ -1,8 +1,7 @@
 import express from "express";
-import os from "os";
 import mongoose from "mongoose";
-import cluster from "cluster";
 import session from "express-session";
+import jwt from "jsonwebtoken";
 import MongoStore from "connect-mongo";
 import path from "path";
 import { Server } from "socket.io";
@@ -23,90 +22,65 @@ import {
 import { config } from "./config/config.js";
 import { handleError } from "./middlewares/handleError.js";
 
-if (cluster.isPrimary) {
-  console.log(`Primary ${process.pid} - Principal Server`);
-  console.log("CPUs: ", os.cpus().length);
-  for (let i = 0; i < os.cpus().length; i++) {
-    cluster.fork();
-  }
+const PORT = config.PORT;
+let io;
 
-  cluster.on("disconnect", (worker) => {
-    console.log(`Worker ${worker.process.pid} died, reboot worker`);
-    cluster.fork();
-  });
-} else {
-  console.log(`Worker ${process.pid} started`);
-  const PORT = config.PORT;
-  let io;
+const app = express();
 
-  const app = express();
+const serverHttp = app.listen(PORT, () => {
+  logger.debug(`Server escuchando en puerto ${PORT}`);
+});
 
-  const serverHttp = app.listen(PORT, () => {
-    logger.debug(`Server escuchando en puerto ${PORT}`);
-  });
+io = new Server(serverHttp);
 
-  io = new Server(serverHttp);
+app.engine(
+  "handlebars",
+  handlebars.engine({
+    runtimeOptions: {
+      allowProtoPropertiesByDefault: true,
+      allowProtoMethodsByDefault: true,
+    },
+    helpers: {
+      gt: (a, b) => a > b,
+    },
+  })
+);
+app.set("view engine", "handlebars");
+app.set("views", path.join(__dirname, "views"));
 
-  app.engine(
-    "handlebars",
-    handlebars.engine({
-      runtimeOptions: {
-        allowProtoPropertiesByDefault: true,
-        allowProtoMethodsByDefault: true,
-      },
-      helpers: {
-        gt: (a, b) => a > b,
-      },
-    })
-  );
-  app.set("view engine", "handlebars");
-  app.set("views", path.join(__dirname, "views"));
+app.use(middlog);
+app.use(express.json());
+app.use(express.urlencoded({ extended: true }));
 
-  app.use(middlog);
-  app.use(express.json());
-  app.use(express.urlencoded({ extended: true }));
-  app.use(
-    session({
-      secret: `${config.SECRET}`,
-      resave: true,
-      saveUninitialized: true,
-      store: MongoStore.create({
-        mongoUrl: `${config.MONGO_URL}${config.DB_NAME}`,
-        ttl: 3600,
-      }),
-    })
-  );
+initPassport();
+app.use(passport.initialize());
+app.use(passport.session());
 
-  initPassport();
-  app.use(passport.initialize());
-  app.use(passport.session());
+app.use(express.static(path.join(__dirname, "public")));
 
-  app.use(express.static(path.join(__dirname, "public")));
+// RUTAS DE NAVEGACIÓN
 
-  // RUTAS DE NAVEGACIÓN
+app.use("/api/products", productsRouter);
+app.use("/api/carts", cartRouter);
+app.use("/api/sessions", sessionRouter);
+app.use("/chat", chatRouter(io));
+app.use("/mockingproducts", mockingProducts);
+app.use("/loggerTest", loggerRouter);
+app.use("/", viewRouter);
+app.get("*", (req, res) => {
+  res.setHeader("Content-Type", "application/json");
+  return res.status(405).json({ error: `Error 404 || NOT FOUND` });
+});
 
-  app.use("/api/products", productsRouter);
-  app.use("/api/carts", cartRouter);
-  app.use("/api/sessions", sessionRouter);
-  app.use("/chat", chatRouter(io));
-  app.use("/mockingproducts", mockingProducts);
-  app.use("/loggerTest", loggerRouter);
-  app.use("/", viewRouter);
-  app.get("*", (req, res) => {
-    res.setHeader("Content-Type", "application/json");
-    return res.status(405).json({ error: `Error 404 || NOT FOUND` });
-  });
+app.use(handleError);
 
-  app.use(handleError);
+handleRealTimeProductsSocket(io);
 
-  handleRealTimeProductsSocket(io);
-
-  try {
-    await mongoose.connect(`${config.MONGO_URL}${config.DB_NAME}`);
-    logger.debug("DB Online...!!!", config.MENSAJE);
-    logger.info("BIENVENIDO! estamos en nivel: " + config.MODE);
-  } catch (error) {
-    logger.debug("Fallo conexión. Detalle:", error.message);
-    logger.info("Intente mas tarde");
-  }
+try {
+  await mongoose.connect(`${config.MONGO_URL}${config.DB_NAME}`);
+  logger.debug("DB Online...!!!", config.MENSAJE);
+  logger.info("BIENVENIDO! estamos en nivel: " + config.MODE);
+} catch (error) {
+  logger.debug("Fallo conexión. Detalle:", error.message);
+  logger.info("Intente mas tarde");
 }

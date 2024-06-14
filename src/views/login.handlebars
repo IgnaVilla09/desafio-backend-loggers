@@ -7,8 +7,35 @@
   <input type="email" name="email" placeholder="Ingrese email" />
   <input type="password" name="password" placeholder="Ingrese un password" />
 
-  <input type="submit" class="btn-form" value="Ingresar" />
+  <input type="submit" class="btn-form" value="Ingresar" id="btnSubmitForm" />
 
 </form>
+
+{{!-- <script>
+  const form = document.querySelector('.box-login');
+  form.addEventListener('submit', async (e) => {
+    e.preventDefault();
+    const email = form.email.value;
+    const password = form.password.value;
+    const response = await fetch('/login', {
+      method: 'POST',
+      headers: {
+        'Content-Type': 'application/json'
+      },
+      body: JSON.stringify({ email, password })
+    });
+    const data = await response.json();
+    if (data.token) {
+      localStorage.setItem('token', data.token);
+    } else {
+      alert('Usuario o contraseña incorrectos');
+    }
+  });
+
+  
+</script> --}}
+
+
+
 
 {{>menu}}

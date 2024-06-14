@@ -123,13 +123,4 @@ export const initPassport = () => {
       }
     )
   );
-  // SESSION GUARDADAS
-  passport.serializeUser((usuario, done) => {
-    return done(null, usuario._id);
-  });
-
-  passport.deserializeUser(async (id, done) => {
-    let usuario = await usuariosMDB.getBy({ _id: id });
-    return done(null, usuario);
-  });
 };

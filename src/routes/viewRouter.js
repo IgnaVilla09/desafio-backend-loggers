@@ -16,18 +16,18 @@ function handleRealTimeProductsSocket(io) {
 }
 
 routerView.get("/", async (req, res) => {
-  res.status(200).render("home", { login: req.session.usuario });
+  res.status(200).render("home", { login: req.user });
 });
 
 routerView.get("/registro", (req, res) => {
-  res.status(200).render("registros", { login: req.session.usuario });
+  res.status(200).render("registros", { login: req.user });
 });
 
 routerView.get("/login", (req, res) => {
-  return res.status(200).render("login", { login: req.session.usuario });
+  return res.status(200).render("login", { login: req.user });
 });
 
-routerView.get("/products", auth, viewController.getProduct);
+routerView.get("/products", viewController.getProduct);
 
 routerView.get("/products/:id", auth, viewController.getProductById);
 
