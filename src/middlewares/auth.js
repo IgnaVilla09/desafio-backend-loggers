@@ -1,18 +1,24 @@
 import { usuariosModelo } from "../dao/models/usuario.modelo.js";
+import jwt from "jsonwebtoken";
 import { logger } from "../utils.js";
 import CustomError from "../utils/CustomErrors.js";
 import { ERRORES } from "../utils/errors.js";
+import { config } from "../config/config.js";
 
 export const auth = async (req, res, next) => {
-  if (!req.session.usuario) {
-    return res.redirect("/login");
+  let token = null;
+
+  if (req.signedCookies.appToken) {
+    token = req.signedCookies.appToken;
   }
+
+  if (!token) {
+    logger.fatal("No se encontró token de autenticación");
+  }
+
   try {
-    const usuario = await usuariosModelo.findById(req.session.usuario._id);
-    if (!usuario) {
-      return res.redirect("/login");
-    }
-    req.usuario = usuario;
+    let usuario = jwt.verify(token, config.SECRET);
+    req.user = usuario;
     next();
   } catch (error) {
     logger.fatal("Error al verificar la autenticación:", error);
@@ -24,7 +30,7 @@ export const auth = async (req, res, next) => {
 };
 
 export const adminAuth = async (req, res, next) => {
-  if (!req.session.usuario || req.session.usuario.role !== "admin") {
+  if (!req.user || req.user.role !== "admin") {
     try {
       CustomError.createError({
         name: "Error de autenticación",
@@ -40,7 +46,7 @@ export const adminAuth = async (req, res, next) => {
 };
 
 export const userAuth = async (req, res, next) => {
-  if (!req.session.usuario || req.session.usuario.role !== "usuario") {
+  if (!req.user || req.user.role !== "usuario") {
     req.logger.fatal("Administrador sin autorización de ejecutar función");
     return res.status(403).json({
       error: `No tiene los privilegios necesarios para acceder a esta función`,

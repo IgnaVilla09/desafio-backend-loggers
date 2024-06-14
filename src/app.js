@@ -20,6 +20,7 @@ import {
 } from "./routes/viewRouter.js";
 import { config } from "./config/config.js";
 import { handleError } from "./middlewares/handleError.js";
+import cookieParser from "cookie-parser";
 
 const PORT = config.PORT;
 let io;
@@ -65,7 +66,7 @@ app.use(
 initPassport();
 app.use(passport.initialize());
 app.use(passport.session());
-
+app.use(cookieParser("appCoder"));
 app.use(express.static(path.join(__dirname, "public")));
 
 // RUTAS DE NAVEGACIÓN

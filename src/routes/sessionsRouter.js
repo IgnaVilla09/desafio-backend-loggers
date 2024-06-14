@@ -1,7 +1,10 @@
 import { Router } from "express";
 import passport from "passport";
+import jwt from "jsonwebtoken";
+import cookieParser from "cookie-parser";
 import { usuariosModelo } from "../dao/models/usuario.modelo.js";
 import { UsuarioDTO } from "../dto/usuarioDTO.js";
+import { config } from "../config/config.js";
 export const router = Router();
 
 //Registro
@@ -33,7 +36,9 @@ router.post(
     let usuario = req.user; //Obtenemos el user del middleware del passport
     usuario = { ...usuario };
     delete usuario.password;
-    req.session.usuario = usuario;
+    let token = jwt.sign(usuario, config.SECRET, { expiresIn: "1h" });
+
+    res.cookie("appToken", token, { maxAge: 1000 * 60 * 60, signed: true });
     res.setHeader("Content-Type", "application/json");
     return res.redirect("/products");
   }
@@ -57,8 +62,6 @@ router.get(
       "/api/sessions/errorGithub?mensaje=Error en autenticación con github",
   }),
   (req, res) => {
-    req.session.usuario = req.user;
-
     res.setHeader("Content-Type", "application/json");
     return res.redirect("/products");
   }
@@ -66,16 +69,7 @@ router.get(
 
 //Logout
 router.get("/logout", (req, res) => {
-  req.session.destroy((e) => {
-    if (e) {
-      res.setHeader("Content-Type", "application/json");
-      return res.status(500).json({
-        error: `Error inesperado en el servidor - Intente más tarde, o contacte a su administrador`,
-        detalle: `${e.message}`,
-      });
-    }
-  });
-
+  res.clearCookie("appToken");
   return res.redirect("/");
 });
 

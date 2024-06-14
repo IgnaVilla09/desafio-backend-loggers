@@ -1,14 +1,21 @@
+{{#if login}}
+<h2>Ya estás logueado</h2>
+
+{{else}}
 <h2>Login de Usuarios:</h2>
 
 <a href="/api/sessions/github" class="github-session">Ingresa con GitHub <i class="fa fa-github"></i> </a>
 
-<form action="/api/sessions/login" method="post" class="box-login">
+<form  class="box-login">
 
-  <input type="email" name="email" placeholder="Ingrese email" />
-  <input type="password" name="password" placeholder="Ingrese un password" />
+  <input type="email" name="email" id="email" placeholder="Ingrese email" />
+  <input type="password" name="password" id="password" placeholder="Ingrese un password" />
 
-  <input type="submit" class="btn-form" value="Ingresar" />
+  <input type="submit" class="btn-form" id="btn-form" value="Ingresar" />
 
 </form>
+{{/if}}
 
 {{>menu}}
+
+<script src="js/login.js"></script>

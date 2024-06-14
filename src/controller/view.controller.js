@@ -22,7 +22,7 @@ export default class viewController {
       { limit: 10, page: pagina, lean: true }
     );
 
-    let usuario = req.session.usuario;
+    let usuario = req.user;
 
     res.status(200).render("products", {
       usuario,

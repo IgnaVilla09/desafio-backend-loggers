@@ -1,3 +1,8 @@
+{{#if login}}
+
+<h2>Ya estás logueado</h2>
+
+{{else}}
 <h2>Registro de Usuarios:</h2>
 
 <form action="/api/sessions/registro" method="post">
@@ -11,5 +16,7 @@
   <input type="submit" class="btn-form" value="Registrarse" />
 
 </form>
+
+{{/if}}
 
 {{>menu}}

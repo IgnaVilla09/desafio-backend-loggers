@@ -12,7 +12,7 @@ export default class ticketController {
         return res.status(404).send("El carrito no fue encontrado.");
       }
 
-      const buyerEmail = req.session.usuario.email;
+      const buyerEmail = req.user.email;
 
       const newTicket = new modeloTicket({
         amount: cart.subtotal,
@@ -43,7 +43,7 @@ export default class ticketController {
 
       const mailOptions = {
         from: `${config.EMAIL}`,
-        to: req.session.usuario.email, // Reemplazar con la direccion de correo electronico del destinatario de prueba
+        to: req.user.email, // Reemplazar con la direccion de correo electronico del destinatario de prueba
         subject: "Prueba de correo",
         html: ticketFormat,
         attachments: [],

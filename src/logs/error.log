@@ -1,15 +1,475 @@
 {
-  message: 'Error al eliminar el producto del carrito',
+  message: 'No se encontró token de autenticación',
   level: 'fatal',
-  timestamp: '2024-06-07T14:11:23.502Z'
+  timestamp: '2024-06-14T17:02:41.974Z'
 }
 {
-  message: 'Error al eliminar el producto del carrito',
   level: 'fatal',
-  timestamp: '2024-06-07T14:11:30.708Z'
+  message: 'Error al verificar la autenticación: config is not defined',
+  stack: 'ReferenceError: config is not defined\n' +
+    '    at auth (file:///E:/CursoBackend/DesafioLoggers/src/middlewares/auth.js:19:37)\n' +
+    '    at Layer.handle [as handle_request] (E:\\CursoBackend\\DesafioLoggers\\node_modules\\express\\lib\\router\\layer.js:95:5)\n' +
+    '    at next (E:\\CursoBackend\\DesafioLoggers\\node_modules\\express\\lib\\router\\route.js:149:13)\n' +
+    '    at Route.dispatch (E:\\CursoBackend\\DesafioLoggers\\node_modules\\express\\lib\\router\\route.js:119:3)\n' +
+    '    at Layer.handle [as handle_request] (E:\\CursoBackend\\DesafioLoggers\\node_modules\\express\\lib\\router\\layer.js:95:5)\n' +
+    '    at E:\\CursoBackend\\DesafioLoggers\\node_modules\\express\\lib\\router\\index.js:284:15\n' +
+    '    at Function.process_params (E:\\CursoBackend\\DesafioLoggers\\node_modules\\express\\lib\\router\\index.js:346:12)\n' +
+    '    at next (E:\\CursoBackend\\DesafioLoggers\\node_modules\\express\\lib\\router\\index.js:280:10)\n' +
+    '    at Function.handle (E:\\CursoBackend\\DesafioLoggers\\node_modules\\express\\lib\\router\\index.js:175:3)\n' +
+    '    at router (E:\\CursoBackend\\DesafioLoggers\\node_modules\\express\\lib\\router\\index.js:47:12)',
+  timestamp: '2024-06-14T17:02:41.976Z'
 }
 {
-  message: 'Autenticación',
+  message: 'No se encontró token de autenticación',
   level: 'fatal',
-  timestamp: '2024-06-07T14:13:32.566Z'
+  timestamp: '2024-06-14T17:02:44.644Z'
+}
+{
+  level: 'fatal',
+  message: 'Error al verificar la autenticación: config is not defined',
+  stack: 'ReferenceError: config is not defined\n' +
+    '    at auth (file:///E:/CursoBackend/DesafioLoggers/src/middlewares/auth.js:19:37)\n' +
+    '    at Layer.handle [as handle_request] (E:\\CursoBackend\\DesafioLoggers\\node_modules\\express\\lib\\router\\layer.js:95:5)\n' +
+    '    at next (E:\\CursoBackend\\DesafioLoggers\\node_modules\\express\\lib\\router\\route.js:149:13)\n' +
+    '    at Route.dispatch (E:\\CursoBackend\\DesafioLoggers\\node_modules\\express\\lib\\router\\route.js:119:3)\n' +
+    '    at Layer.handle [as handle_request] (E:\\CursoBackend\\DesafioLoggers\\node_modules\\express\\lib\\router\\layer.js:95:5)\n' +
+    '    at E:\\CursoBackend\\DesafioLoggers\\node_modules\\express\\lib\\router\\index.js:284:15\n' +
+    '    at Function.process_params (E:\\CursoBackend\\DesafioLoggers\\node_modules\\express\\lib\\router\\index.js:346:12)\n' +
+    '    at next (E:\\CursoBackend\\DesafioLoggers\\node_modules\\express\\lib\\router\\index.js:280:10)\n' +
+    '    at Function.handle (E:\\CursoBackend\\DesafioLoggers\\node_modules\\express\\lib\\router\\index.js:175:3)\n' +
+    '    at router (E:\\CursoBackend\\DesafioLoggers\\node_modules\\express\\lib\\router\\index.js:47:12)',
+  timestamp: '2024-06-14T17:02:44.645Z'
+}
+{
+  message: 'No se encontró token de autenticación',
+  level: 'fatal',
+  timestamp: '2024-06-14T17:03:10.255Z'
+}
+{
+  name: 'JsonWebTokenError',
+  message: 'Error al verificar la autenticación: jwt must be provided',
+  level: 'fatal',
+  stack: 'JsonWebTokenError: jwt must be provided\n' +
+    '    at module.exports [as verify] (E:\\CursoBackend\\DesafioLoggers\\node_modules\\jsonwebtoken\\verify.js:60:17)\n' +
+    '    at auth (file:///E:/CursoBackend/DesafioLoggers/src/middlewares/auth.js:20:23)\n' +
+    '    at Layer.handle [as handle_request] (E:\\CursoBackend\\DesafioLoggers\\node_modules\\express\\lib\\router\\layer.js:95:5)\n' +
+    '    at next (E:\\CursoBackend\\DesafioLoggers\\node_modules\\express\\lib\\router\\route.js:149:13)\n' +
+    '    at Route.dispatch (E:\\CursoBackend\\DesafioLoggers\\node_modules\\express\\lib\\router\\route.js:119:3)\n' +
+    '    at Layer.handle [as handle_request] (E:\\CursoBackend\\DesafioLoggers\\node_modules\\express\\lib\\router\\layer.js:95:5)\n' +
+    '    at E:\\CursoBackend\\DesafioLoggers\\node_modules\\express\\lib\\router\\index.js:284:15\n' +
+    '    at Function.process_params (E:\\CursoBackend\\DesafioLoggers\\node_modules\\express\\lib\\router\\index.js:346:12)\n' +
+    '    at next (E:\\CursoBackend\\DesafioLoggers\\node_modules\\express\\lib\\router\\index.js:280:10)\n' +
+    '    at Function.handle (E:\\CursoBackend\\DesafioLoggers\\node_modules\\express\\lib\\router\\index.js:175:3)',
+  timestamp: '2024-06-14T17:03:10.257Z'
+}
+{
+  message: 'No se encontró token de autenticación',
+  level: 'fatal',
+  timestamp: '2024-06-14T17:03:11.673Z'
+}
+{
+  name: 'JsonWebTokenError',
+  message: 'Error al verificar la autenticación: jwt must be provided',
+  level: 'fatal',
+  stack: 'JsonWebTokenError: jwt must be provided\n' +
+    '    at module.exports [as verify] (E:\\CursoBackend\\DesafioLoggers\\node_modules\\jsonwebtoken\\verify.js:60:17)\n' +
+    '    at auth (file:///E:/CursoBackend/DesafioLoggers/src/middlewares/auth.js:20:23)\n' +
+    '    at Layer.handle [as handle_request] (E:\\CursoBackend\\DesafioLoggers\\node_modules\\express\\lib\\router\\layer.js:95:5)\n' +
+    '    at next (E:\\CursoBackend\\DesafioLoggers\\node_modules\\express\\lib\\router\\route.js:149:13)\n' +
+    '    at Route.dispatch (E:\\CursoBackend\\DesafioLoggers\\node_modules\\express\\lib\\router\\route.js:119:3)\n' +
+    '    at Layer.handle [as handle_request] (E:\\CursoBackend\\DesafioLoggers\\node_modules\\express\\lib\\router\\layer.js:95:5)\n' +
+    '    at E:\\CursoBackend\\DesafioLoggers\\node_modules\\express\\lib\\router\\index.js:284:15\n' +
+    '    at Function.process_params (E:\\CursoBackend\\DesafioLoggers\\node_modules\\express\\lib\\router\\index.js:346:12)\n' +
+    '    at next (E:\\CursoBackend\\DesafioLoggers\\node_modules\\express\\lib\\router\\index.js:280:10)\n' +
+    '    at Function.handle (E:\\CursoBackend\\DesafioLoggers\\node_modules\\express\\lib\\router\\index.js:175:3)',
+  timestamp: '2024-06-14T17:03:11.674Z'
+}
+{
+  message: 'No se encontró token de autenticación',
+  level: 'fatal',
+  timestamp: '2024-06-14T17:05:24.391Z'
+}
+{
+  name: 'JsonWebTokenError',
+  message: 'Error al verificar la autenticación: jwt must be provided',
+  level: 'fatal',
+  stack: 'JsonWebTokenError: jwt must be provided\n' +
+    '    at module.exports [as verify] (E:\\CursoBackend\\DesafioLoggers\\node_modules\\jsonwebtoken\\verify.js:60:17)\n' +
+    '    at auth (file:///E:/CursoBackend/DesafioLoggers/src/middlewares/auth.js:20:23)\n' +
+    '    at Layer.handle [as handle_request] (E:\\CursoBackend\\DesafioLoggers\\node_modules\\express\\lib\\router\\layer.js:95:5)\n' +
+    '    at next (E:\\CursoBackend\\DesafioLoggers\\node_modules\\express\\lib\\router\\route.js:149:13)\n' +
+    '    at Route.dispatch (E:\\CursoBackend\\DesafioLoggers\\node_modules\\express\\lib\\router\\route.js:119:3)\n' +
+    '    at Layer.handle [as handle_request] (E:\\CursoBackend\\DesafioLoggers\\node_modules\\express\\lib\\router\\layer.js:95:5)\n' +
+    '    at E:\\CursoBackend\\DesafioLoggers\\node_modules\\express\\lib\\router\\index.js:284:15\n' +
+    '    at Function.process_params (E:\\CursoBackend\\DesafioLoggers\\node_modules\\express\\lib\\router\\index.js:346:12)\n' +
+    '    at next (E:\\CursoBackend\\DesafioLoggers\\node_modules\\express\\lib\\router\\index.js:280:10)\n' +
+    '    at Function.handle (E:\\CursoBackend\\DesafioLoggers\\node_modules\\express\\lib\\router\\index.js:175:3)',
+  timestamp: '2024-06-14T17:05:24.392Z'
+}
+{
+  message: 'No se encontró token de autenticación',
+  level: 'fatal',
+  timestamp: '2024-06-14T17:05:50.321Z'
+}
+{
+  name: 'JsonWebTokenError',
+  message: 'Error al verificar la autenticación: jwt must be provided',
+  level: 'fatal',
+  stack: 'JsonWebTokenError: jwt must be provided\n' +
+    '    at module.exports [as verify] (E:\\CursoBackend\\DesafioLoggers\\node_modules\\jsonwebtoken\\verify.js:60:17)\n' +
+    '    at auth (file:///E:/CursoBackend/DesafioLoggers/src/middlewares/auth.js:20:23)\n' +
+    '    at Layer.handle [as handle_request] (E:\\CursoBackend\\DesafioLoggers\\node_modules\\express\\lib\\router\\layer.js:95:5)\n' +
+    '    at next (E:\\CursoBackend\\DesafioLoggers\\node_modules\\express\\lib\\router\\route.js:149:13)\n' +
+    '    at Route.dispatch (E:\\CursoBackend\\DesafioLoggers\\node_modules\\express\\lib\\router\\route.js:119:3)\n' +
+    '    at Layer.handle [as handle_request] (E:\\CursoBackend\\DesafioLoggers\\node_modules\\express\\lib\\router\\layer.js:95:5)\n' +
+    '    at E:\\CursoBackend\\DesafioLoggers\\node_modules\\express\\lib\\router\\index.js:284:15\n' +
+    '    at Function.process_params (E:\\CursoBackend\\DesafioLoggers\\node_modules\\express\\lib\\router\\index.js:346:12)\n' +
+    '    at next (E:\\CursoBackend\\DesafioLoggers\\node_modules\\express\\lib\\router\\index.js:280:10)\n' +
+    '    at Function.handle (E:\\CursoBackend\\DesafioLoggers\\node_modules\\express\\lib\\router\\index.js:175:3)',
+  timestamp: '2024-06-14T17:05:50.322Z'
+}
+{
+  message: 'No se encontró token de autenticación',
+  level: 'fatal',
+  timestamp: '2024-06-14T18:58:47.757Z'
+}
+{
+  name: 'JsonWebTokenError',
+  message: 'Error al verificar la autenticación: jwt must be provided',
+  level: 'fatal',
+  stack: 'JsonWebTokenError: jwt must be provided\n' +
+    '    at module.exports [as verify] (E:\\CursoBackend\\DesafioLoggers\\node_modules\\jsonwebtoken\\verify.js:60:17)\n' +
+    '    at auth (file:///E:/CursoBackend/DesafioLoggers/src/middlewares/auth.js:20:23)\n' +
+    '    at Layer.handle [as handle_request] (E:\\CursoBackend\\DesafioLoggers\\node_modules\\express\\lib\\router\\layer.js:95:5)\n' +
+    '    at next (E:\\CursoBackend\\DesafioLoggers\\node_modules\\express\\lib\\router\\route.js:149:13)\n' +
+    '    at Route.dispatch (E:\\CursoBackend\\DesafioLoggers\\node_modules\\express\\lib\\router\\route.js:119:3)\n' +
+    '    at Layer.handle [as handle_request] (E:\\CursoBackend\\DesafioLoggers\\node_modules\\express\\lib\\router\\layer.js:95:5)\n' +
+    '    at E:\\CursoBackend\\DesafioLoggers\\node_modules\\express\\lib\\router\\index.js:284:15\n' +
+    '    at Function.process_params (E:\\CursoBackend\\DesafioLoggers\\node_modules\\express\\lib\\router\\index.js:346:12)\n' +
+    '    at next (E:\\CursoBackend\\DesafioLoggers\\node_modules\\express\\lib\\router\\index.js:280:10)\n' +
+    '    at Function.handle (E:\\CursoBackend\\DesafioLoggers\\node_modules\\express\\lib\\router\\index.js:175:3)',
+  timestamp: '2024-06-14T18:58:47.759Z'
+}
+{
+  message: 'No se encontró token de autenticación',
+  level: 'fatal',
+  timestamp: '2024-06-14T18:58:52.205Z'
+}
+{
+  name: 'JsonWebTokenError',
+  message: 'Error al verificar la autenticación: jwt must be provided',
+  level: 'fatal',
+  stack: 'JsonWebTokenError: jwt must be provided\n' +
+    '    at module.exports [as verify] (E:\\CursoBackend\\DesafioLoggers\\node_modules\\jsonwebtoken\\verify.js:60:17)\n' +
+    '    at auth (file:///E:/CursoBackend/DesafioLoggers/src/middlewares/auth.js:20:23)\n' +
+    '    at Layer.handle [as handle_request] (E:\\CursoBackend\\DesafioLoggers\\node_modules\\express\\lib\\router\\layer.js:95:5)\n' +
+    '    at next (E:\\CursoBackend\\DesafioLoggers\\node_modules\\express\\lib\\router\\route.js:149:13)\n' +
+    '    at Route.dispatch (E:\\CursoBackend\\DesafioLoggers\\node_modules\\express\\lib\\router\\route.js:119:3)\n' +
+    '    at Layer.handle [as handle_request] (E:\\CursoBackend\\DesafioLoggers\\node_modules\\express\\lib\\router\\layer.js:95:5)\n' +
+    '    at E:\\CursoBackend\\DesafioLoggers\\node_modules\\express\\lib\\router\\index.js:284:15\n' +
+    '    at Function.process_params (E:\\CursoBackend\\DesafioLoggers\\node_modules\\express\\lib\\router\\index.js:346:12)\n' +
+    '    at next (E:\\CursoBackend\\DesafioLoggers\\node_modules\\express\\lib\\router\\index.js:280:10)\n' +
+    '    at Function.handle (E:\\CursoBackend\\DesafioLoggers\\node_modules\\express\\lib\\router\\index.js:175:3)',
+  timestamp: '2024-06-14T18:58:52.206Z'
+}
+{
+  message: 'No se encontró token de autenticación',
+  level: 'fatal',
+  timestamp: '2024-06-14T19:02:49.512Z'
+}
+{
+  name: 'JsonWebTokenError',
+  message: 'Error al verificar la autenticación: jwt must be provided',
+  level: 'fatal',
+  stack: 'JsonWebTokenError: jwt must be provided\n' +
+    '    at module.exports [as verify] (E:\\CursoBackend\\DesafioLoggers\\node_modules\\jsonwebtoken\\verify.js:60:17)\n' +
+    '    at auth (file:///E:/CursoBackend/DesafioLoggers/src/middlewares/auth.js:20:23)\n' +
+    '    at Layer.handle [as handle_request] (E:\\CursoBackend\\DesafioLoggers\\node_modules\\express\\lib\\router\\layer.js:95:5)\n' +
+    '    at next (E:\\CursoBackend\\DesafioLoggers\\node_modules\\express\\lib\\router\\route.js:149:13)\n' +
+    '    at Route.dispatch (E:\\CursoBackend\\DesafioLoggers\\node_modules\\express\\lib\\router\\route.js:119:3)\n' +
+    '    at Layer.handle [as handle_request] (E:\\CursoBackend\\DesafioLoggers\\node_modules\\express\\lib\\router\\layer.js:95:5)\n' +
+    '    at E:\\CursoBackend\\DesafioLoggers\\node_modules\\express\\lib\\router\\index.js:284:15\n' +
+    '    at Function.process_params (E:\\CursoBackend\\DesafioLoggers\\node_modules\\express\\lib\\router\\index.js:346:12)\n' +
+    '    at next (E:\\CursoBackend\\DesafioLoggers\\node_modules\\express\\lib\\router\\index.js:280:10)\n' +
+    '    at Function.handle (E:\\CursoBackend\\DesafioLoggers\\node_modules\\express\\lib\\router\\index.js:175:3)',
+  timestamp: '2024-06-14T19:02:49.514Z'
+}
+{
+  message: 'No se encontró token de autenticación',
+  level: 'fatal',
+  timestamp: '2024-06-14T19:04:11.918Z'
+}
+{
+  name: 'JsonWebTokenError',
+  message: 'Error al verificar la autenticación: jwt must be provided',
+  level: 'fatal',
+  stack: 'JsonWebTokenError: jwt must be provided\n' +
+    '    at module.exports [as verify] (E:\\CursoBackend\\DesafioLoggers\\node_modules\\jsonwebtoken\\verify.js:60:17)\n' +
+    '    at auth (file:///E:/CursoBackend/DesafioLoggers/src/middlewares/auth.js:20:23)\n' +
+    '    at Layer.handle [as handle_request] (E:\\CursoBackend\\DesafioLoggers\\node_modules\\express\\lib\\router\\layer.js:95:5)\n' +
+    '    at next (E:\\CursoBackend\\DesafioLoggers\\node_modules\\express\\lib\\router\\route.js:149:13)\n' +
+    '    at Route.dispatch (E:\\CursoBackend\\DesafioLoggers\\node_modules\\express\\lib\\router\\route.js:119:3)\n' +
+    '    at Layer.handle [as handle_request] (E:\\CursoBackend\\DesafioLoggers\\node_modules\\express\\lib\\router\\layer.js:95:5)\n' +
+    '    at E:\\CursoBackend\\DesafioLoggers\\node_modules\\express\\lib\\router\\index.js:284:15\n' +
+    '    at Function.process_params (E:\\CursoBackend\\DesafioLoggers\\node_modules\\express\\lib\\router\\index.js:346:12)\n' +
+    '    at next (E:\\CursoBackend\\DesafioLoggers\\node_modules\\express\\lib\\router\\index.js:280:10)\n' +
+    '    at Function.handle (E:\\CursoBackend\\DesafioLoggers\\node_modules\\express\\lib\\router\\index.js:175:3)',
+  timestamp: '2024-06-14T19:04:11.921Z'
+}
+{
+  message: 'No se encontró token de autenticación',
+  level: 'fatal',
+  timestamp: '2024-06-14T19:04:13.046Z'
+}
+{
+  name: 'JsonWebTokenError',
+  message: 'Error al verificar la autenticación: jwt must be provided',
+  level: 'fatal',
+  stack: 'JsonWebTokenError: jwt must be provided\n' +
+    '    at module.exports [as verify] (E:\\CursoBackend\\DesafioLoggers\\node_modules\\jsonwebtoken\\verify.js:60:17)\n' +
+    '    at auth (file:///E:/CursoBackend/DesafioLoggers/src/middlewares/auth.js:20:23)\n' +
+    '    at Layer.handle [as handle_request] (E:\\CursoBackend\\DesafioLoggers\\node_modules\\express\\lib\\router\\layer.js:95:5)\n' +
+    '    at next (E:\\CursoBackend\\DesafioLoggers\\node_modules\\express\\lib\\router\\route.js:149:13)\n' +
+    '    at Route.dispatch (E:\\CursoBackend\\DesafioLoggers\\node_modules\\express\\lib\\router\\route.js:119:3)\n' +
+    '    at Layer.handle [as handle_request] (E:\\CursoBackend\\DesafioLoggers\\node_modules\\express\\lib\\router\\layer.js:95:5)\n' +
+    '    at E:\\CursoBackend\\DesafioLoggers\\node_modules\\express\\lib\\router\\index.js:284:15\n' +
+    '    at Function.process_params (E:\\CursoBackend\\DesafioLoggers\\node_modules\\express\\lib\\router\\index.js:346:12)\n' +
+    '    at next (E:\\CursoBackend\\DesafioLoggers\\node_modules\\express\\lib\\router\\index.js:280:10)\n' +
+    '    at Function.handle (E:\\CursoBackend\\DesafioLoggers\\node_modules\\express\\lib\\router\\index.js:175:3)',
+  timestamp: '2024-06-14T19:04:13.048Z'
+}
+{
+  message: 'No se encontró token de autenticación',
+  level: 'fatal',
+  timestamp: '2024-06-14T19:05:06.564Z'
+}
+{
+  name: 'JsonWebTokenError',
+  message: 'Error al verificar la autenticación: jwt must be provided',
+  level: 'fatal',
+  stack: 'JsonWebTokenError: jwt must be provided\n' +
+    '    at module.exports [as verify] (E:\\CursoBackend\\DesafioLoggers\\node_modules\\jsonwebtoken\\verify.js:60:17)\n' +
+    '    at auth (file:///E:/CursoBackend/DesafioLoggers/src/middlewares/auth.js:20:23)\n' +
+    '    at Layer.handle [as handle_request] (E:\\CursoBackend\\DesafioLoggers\\node_modules\\express\\lib\\router\\layer.js:95:5)\n' +
+    '    at next (E:\\CursoBackend\\DesafioLoggers\\node_modules\\express\\lib\\router\\route.js:149:13)\n' +
+    '    at Route.dispatch (E:\\CursoBackend\\DesafioLoggers\\node_modules\\express\\lib\\router\\route.js:119:3)\n' +
+    '    at Layer.handle [as handle_request] (E:\\CursoBackend\\DesafioLoggers\\node_modules\\express\\lib\\router\\layer.js:95:5)\n' +
+    '    at E:\\CursoBackend\\DesafioLoggers\\node_modules\\express\\lib\\router\\index.js:284:15\n' +
+    '    at Function.process_params (E:\\CursoBackend\\DesafioLoggers\\node_modules\\express\\lib\\router\\index.js:346:12)\n' +
+    '    at next (E:\\CursoBackend\\DesafioLoggers\\node_modules\\express\\lib\\router\\index.js:280:10)\n' +
+    '    at Function.handle (E:\\CursoBackend\\DesafioLoggers\\node_modules\\express\\lib\\router\\index.js:175:3)',
+  timestamp: '2024-06-14T19:05:06.565Z'
+}
+{
+  message: 'No se encontró token de autenticación',
+  level: 'fatal',
+  timestamp: '2024-06-14T19:05:07.616Z'
+}
+{
+  name: 'JsonWebTokenError',
+  message: 'Error al verificar la autenticación: jwt must be provided',
+  level: 'fatal',
+  stack: 'JsonWebTokenError: jwt must be provided\n' +
+    '    at module.exports [as verify] (E:\\CursoBackend\\DesafioLoggers\\node_modules\\jsonwebtoken\\verify.js:60:17)\n' +
+    '    at auth (file:///E:/CursoBackend/DesafioLoggers/src/middlewares/auth.js:20:23)\n' +
+    '    at Layer.handle [as handle_request] (E:\\CursoBackend\\DesafioLoggers\\node_modules\\express\\lib\\router\\layer.js:95:5)\n' +
+    '    at next (E:\\CursoBackend\\DesafioLoggers\\node_modules\\express\\lib\\router\\route.js:149:13)\n' +
+    '    at Route.dispatch (E:\\CursoBackend\\DesafioLoggers\\node_modules\\express\\lib\\router\\route.js:119:3)\n' +
+    '    at Layer.handle [as handle_request] (E:\\CursoBackend\\DesafioLoggers\\node_modules\\express\\lib\\router\\layer.js:95:5)\n' +
+    '    at E:\\CursoBackend\\DesafioLoggers\\node_modules\\express\\lib\\router\\index.js:284:15\n' +
+    '    at Function.process_params (E:\\CursoBackend\\DesafioLoggers\\node_modules\\express\\lib\\router\\index.js:346:12)\n' +
+    '    at next (E:\\CursoBackend\\DesafioLoggers\\node_modules\\express\\lib\\router\\index.js:280:10)\n' +
+    '    at Function.handle (E:\\CursoBackend\\DesafioLoggers\\node_modules\\express\\lib\\router\\index.js:175:3)',
+  timestamp: '2024-06-14T19:05:07.617Z'
+}
+{
+  message: 'No se encontró token de autenticación',
+  level: 'fatal',
+  timestamp: '2024-06-14T19:16:30.990Z'
+}
+{
+  name: 'JsonWebTokenError',
+  message: 'Error al verificar la autenticación: jwt must be provided',
+  level: 'fatal',
+  stack: 'JsonWebTokenError: jwt must be provided\n' +
+    '    at module.exports [as verify] (E:\\CursoBackend\\DesafioLoggers\\node_modules\\jsonwebtoken\\verify.js:60:17)\n' +
+    '    at auth (file:///E:/CursoBackend/DesafioLoggers/src/middlewares/auth.js:20:23)\n' +
+    '    at Layer.handle [as handle_request] (E:\\CursoBackend\\DesafioLoggers\\node_modules\\express\\lib\\router\\layer.js:95:5)\n' +
+    '    at next (E:\\CursoBackend\\DesafioLoggers\\node_modules\\express\\lib\\router\\route.js:149:13)\n' +
+    '    at Route.dispatch (E:\\CursoBackend\\DesafioLoggers\\node_modules\\express\\lib\\router\\route.js:119:3)\n' +
+    '    at Layer.handle [as handle_request] (E:\\CursoBackend\\DesafioLoggers\\node_modules\\express\\lib\\router\\layer.js:95:5)\n' +
+    '    at E:\\CursoBackend\\DesafioLoggers\\node_modules\\express\\lib\\router\\index.js:284:15\n' +
+    '    at Function.process_params (E:\\CursoBackend\\DesafioLoggers\\node_modules\\express\\lib\\router\\index.js:346:12)\n' +
+    '    at next (E:\\CursoBackend\\DesafioLoggers\\node_modules\\express\\lib\\router\\index.js:280:10)\n' +
+    '    at Function.handle (E:\\CursoBackend\\DesafioLoggers\\node_modules\\express\\lib\\router\\index.js:175:3)',
+  timestamp: '2024-06-14T19:16:30.992Z'
+}
+{
+  message: 'No se encontró token de autenticación',
+  level: 'fatal',
+  timestamp: '2024-06-14T19:17:08.017Z'
+}
+{
+  name: 'JsonWebTokenError',
+  message: 'Error al verificar la autenticación: jwt must be provided',
+  level: 'fatal',
+  stack: 'JsonWebTokenError: jwt must be provided\n' +
+    '    at module.exports [as verify] (E:\\CursoBackend\\DesafioLoggers\\node_modules\\jsonwebtoken\\verify.js:60:17)\n' +
+    '    at auth (file:///E:/CursoBackend/DesafioLoggers/src/middlewares/auth.js:20:23)\n' +
+    '    at Layer.handle [as handle_request] (E:\\CursoBackend\\DesafioLoggers\\node_modules\\express\\lib\\router\\layer.js:95:5)\n' +
+    '    at next (E:\\CursoBackend\\DesafioLoggers\\node_modules\\express\\lib\\router\\route.js:149:13)\n' +
+    '    at Route.dispatch (E:\\CursoBackend\\DesafioLoggers\\node_modules\\express\\lib\\router\\route.js:119:3)\n' +
+    '    at Layer.handle [as handle_request] (E:\\CursoBackend\\DesafioLoggers\\node_modules\\express\\lib\\router\\layer.js:95:5)\n' +
+    '    at E:\\CursoBackend\\DesafioLoggers\\node_modules\\express\\lib\\router\\index.js:284:15\n' +
+    '    at Function.process_params (E:\\CursoBackend\\DesafioLoggers\\node_modules\\express\\lib\\router\\index.js:346:12)\n' +
+    '    at next (E:\\CursoBackend\\DesafioLoggers\\node_modules\\express\\lib\\router\\index.js:280:10)\n' +
+    '    at Function.handle (E:\\CursoBackend\\DesafioLoggers\\node_modules\\express\\lib\\router\\index.js:175:3)',
+  timestamp: '2024-06-14T19:17:08.018Z'
+}
+{
+  message: 'Error: Failed to lookup view "registro" in views directory "E:\\CursoBackend\\DesafioLoggers\\src\\views"\n' +
+    '    at Function.render (E:\\CursoBackend\\DesafioLoggers\\node_modules\\express\\lib\\application.js:597:17)\n' +
+    '    at ServerResponse.render (E:\\CursoBackend\\DesafioLoggers\\node_modules\\express\\lib\\response.js:1048:7)\n' +
+    '    at file:///E:/CursoBackend/DesafioLoggers/src/routes/viewRouter.js:31:28\n' +
+    '    at Layer.handle [as handle_request] (E:\\CursoBackend\\DesafioLoggers\\node_modules\\express\\lib\\router\\layer.js:95:5)\n' +
+    '    at next (E:\\CursoBackend\\DesafioLoggers\\node_modules\\express\\lib\\router\\route.js:149:13)\n' +
+    '    at Route.dispatch (E:\\CursoBackend\\DesafioLoggers\\node_modules\\express\\lib\\router\\route.js:119:3)\n' +
+    '    at Layer.handle [as handle_request] (E:\\CursoBackend\\DesafioLoggers\\node_modules\\express\\lib\\router\\layer.js:95:5)\n' +
+    '    at E:\\CursoBackend\\DesafioLoggers\\node_modules\\express\\lib\\router\\index.js:284:15\n' +
+    '    at Function.process_params (E:\\CursoBackend\\DesafioLoggers\\node_modules\\express\\lib\\router\\index.js:346:12)\n' +
+    '    at next (E:\\CursoBackend\\DesafioLoggers\\node_modules\\express\\lib\\router\\index.js:280:10)',
+  level: 'fatal',
+  timestamp: '2024-06-14T19:25:40.782Z'
+}
+{
+  message: 'No se encontró token de autenticación',
+  level: 'fatal',
+  timestamp: '2024-06-14T19:30:27.967Z'
+}
+{
+  name: 'JsonWebTokenError',
+  message: 'Error al verificar la autenticación: jwt must be provided',
+  level: 'fatal',
+  stack: 'JsonWebTokenError: jwt must be provided\n' +
+    '    at module.exports [as verify] (E:\\CursoBackend\\DesafioLoggers\\node_modules\\jsonwebtoken\\verify.js:60:17)\n' +
+    '    at auth (file:///E:/CursoBackend/DesafioLoggers/src/middlewares/auth.js:20:23)\n' +
+    '    at Layer.handle [as handle_request] (E:\\CursoBackend\\DesafioLoggers\\node_modules\\express\\lib\\router\\layer.js:95:5)\n' +
+    '    at next (E:\\CursoBackend\\DesafioLoggers\\node_modules\\express\\lib\\router\\route.js:149:13)\n' +
+    '    at Route.dispatch (E:\\CursoBackend\\DesafioLoggers\\node_modules\\express\\lib\\router\\route.js:119:3)\n' +
+    '    at Layer.handle [as handle_request] (E:\\CursoBackend\\DesafioLoggers\\node_modules\\express\\lib\\router\\layer.js:95:5)\n' +
+    '    at E:\\CursoBackend\\DesafioLoggers\\node_modules\\express\\lib\\router\\index.js:284:15\n' +
+    '    at Function.process_params (E:\\CursoBackend\\DesafioLoggers\\node_modules\\express\\lib\\router\\index.js:346:12)\n' +
+    '    at next (E:\\CursoBackend\\DesafioLoggers\\node_modules\\express\\lib\\router\\index.js:280:10)\n' +
+    '    at Function.handle (E:\\CursoBackend\\DesafioLoggers\\node_modules\\express\\lib\\router\\index.js:175:3)',
+  timestamp: '2024-06-14T19:30:27.970Z'
+}
+{
+  message: 'No se encontró token de autenticación',
+  level: 'fatal',
+  timestamp: '2024-06-14T19:30:31.036Z'
+}
+{
+  name: 'JsonWebTokenError',
+  message: 'Error al verificar la autenticación: jwt must be provided',
+  level: 'fatal',
+  stack: 'JsonWebTokenError: jwt must be provided\n' +
+    '    at module.exports [as verify] (E:\\CursoBackend\\DesafioLoggers\\node_modules\\jsonwebtoken\\verify.js:60:17)\n' +
+    '    at auth (file:///E:/CursoBackend/DesafioLoggers/src/middlewares/auth.js:20:23)\n' +
+    '    at Layer.handle [as handle_request] (E:\\CursoBackend\\DesafioLoggers\\node_modules\\express\\lib\\router\\layer.js:95:5)\n' +
+    '    at next (E:\\CursoBackend\\DesafioLoggers\\node_modules\\express\\lib\\router\\route.js:149:13)\n' +
+    '    at Route.dispatch (E:\\CursoBackend\\DesafioLoggers\\node_modules\\express\\lib\\router\\route.js:119:3)\n' +
+    '    at Layer.handle [as handle_request] (E:\\CursoBackend\\DesafioLoggers\\node_modules\\express\\lib\\router\\layer.js:95:5)\n' +
+    '    at E:\\CursoBackend\\DesafioLoggers\\node_modules\\express\\lib\\router\\index.js:284:15\n' +
+    '    at Function.process_params (E:\\CursoBackend\\DesafioLoggers\\node_modules\\express\\lib\\router\\index.js:346:12)\n' +
+    '    at next (E:\\CursoBackend\\DesafioLoggers\\node_modules\\express\\lib\\router\\index.js:280:10)\n' +
+    '    at Function.handle (E:\\CursoBackend\\DesafioLoggers\\node_modules\\express\\lib\\router\\index.js:175:3)',
+  timestamp: '2024-06-14T19:30:31.037Z'
+}
+{
+  message: 'No se encontró token de autenticación',
+  level: 'fatal',
+  timestamp: '2024-06-14T19:35:44.322Z'
+}
+{
+  name: 'JsonWebTokenError',
+  message: 'Error al verificar la autenticación: jwt must be provided',
+  level: 'fatal',
+  stack: 'JsonWebTokenError: jwt must be provided\n' +
+    '    at module.exports [as verify] (E:\\CursoBackend\\DesafioLoggers\\node_modules\\jsonwebtoken\\verify.js:60:17)\n' +
+    '    at auth (file:///E:/CursoBackend/DesafioLoggers/src/middlewares/auth.js:20:23)\n' +
+    '    at Layer.handle [as handle_request] (E:\\CursoBackend\\DesafioLoggers\\node_modules\\express\\lib\\router\\layer.js:95:5)\n' +
+    '    at next (E:\\CursoBackend\\DesafioLoggers\\node_modules\\express\\lib\\router\\route.js:149:13)\n' +
+    '    at Route.dispatch (E:\\CursoBackend\\DesafioLoggers\\node_modules\\express\\lib\\router\\route.js:119:3)\n' +
+    '    at Layer.handle [as handle_request] (E:\\CursoBackend\\DesafioLoggers\\node_modules\\express\\lib\\router\\layer.js:95:5)\n' +
+    '    at E:\\CursoBackend\\DesafioLoggers\\node_modules\\express\\lib\\router\\index.js:284:15\n' +
+    '    at Function.process_params (E:\\CursoBackend\\DesafioLoggers\\node_modules\\express\\lib\\router\\index.js:346:12)\n' +
+    '    at next (E:\\CursoBackend\\DesafioLoggers\\node_modules\\express\\lib\\router\\index.js:280:10)\n' +
+    '    at Function.handle (E:\\CursoBackend\\DesafioLoggers\\node_modules\\express\\lib\\router\\index.js:175:3)',
+  timestamp: '2024-06-14T19:35:44.325Z'
+}
+{
+  message: 'No se encontró token de autenticación',
+  level: 'fatal',
+  timestamp: '2024-06-14T19:35:58.989Z'
+}
+{
+  name: 'JsonWebTokenError',
+  message: 'Error al verificar la autenticación: jwt must be provided',
+  level: 'fatal',
+  stack: 'JsonWebTokenError: jwt must be provided\n' +
+    '    at module.exports [as verify] (E:\\CursoBackend\\DesafioLoggers\\node_modules\\jsonwebtoken\\verify.js:60:17)\n' +
+    '    at auth (file:///E:/CursoBackend/DesafioLoggers/src/middlewares/auth.js:20:23)\n' +
+    '    at Layer.handle [as handle_request] (E:\\CursoBackend\\DesafioLoggers\\node_modules\\express\\lib\\router\\layer.js:95:5)\n' +
+    '    at next (E:\\CursoBackend\\DesafioLoggers\\node_modules\\express\\lib\\router\\route.js:149:13)\n' +
+    '    at Route.dispatch (E:\\CursoBackend\\DesafioLoggers\\node_modules\\express\\lib\\router\\route.js:119:3)\n' +
+    '    at Layer.handle [as handle_request] (E:\\CursoBackend\\DesafioLoggers\\node_modules\\express\\lib\\router\\layer.js:95:5)\n' +
+    '    at E:\\CursoBackend\\DesafioLoggers\\node_modules\\express\\lib\\router\\index.js:284:15\n' +
+    '    at Function.process_params (E:\\CursoBackend\\DesafioLoggers\\node_modules\\express\\lib\\router\\index.js:346:12)\n' +
+    '    at next (E:\\CursoBackend\\DesafioLoggers\\node_modules\\express\\lib\\router\\index.js:280:10)\n' +
+    '    at Function.handle (E:\\CursoBackend\\DesafioLoggers\\node_modules\\express\\lib\\router\\index.js:175:3)',
+  timestamp: '2024-06-14T19:35:58.990Z'
+}
+{
+  message: 'No se encontró token de autenticación',
+  level: 'fatal',
+  timestamp: '2024-06-14T19:37:27.650Z'
+}
+{
+  name: 'JsonWebTokenError',
+  message: 'Error al verificar la autenticación: jwt must be provided',
+  level: 'fatal',
+  stack: 'JsonWebTokenError: jwt must be provided\n' +
+    '    at module.exports [as verify] (E:\\CursoBackend\\DesafioLoggers\\node_modules\\jsonwebtoken\\verify.js:60:17)\n' +
+    '    at auth (file:///E:/CursoBackend/DesafioLoggers/src/middlewares/auth.js:20:23)\n' +
+    '    at Layer.handle [as handle_request] (E:\\CursoBackend\\DesafioLoggers\\node_modules\\express\\lib\\router\\layer.js:95:5)\n' +
+    '    at next (E:\\CursoBackend\\DesafioLoggers\\node_modules\\express\\lib\\router\\route.js:149:13)\n' +
+    '    at Route.dispatch (E:\\CursoBackend\\DesafioLoggers\\node_modules\\express\\lib\\router\\route.js:119:3)\n' +
+    '    at Layer.handle [as handle_request] (E:\\CursoBackend\\DesafioLoggers\\node_modules\\express\\lib\\router\\layer.js:95:5)\n' +
+    '    at E:\\CursoBackend\\DesafioLoggers\\node_modules\\express\\lib\\router\\index.js:284:15\n' +
+    '    at Function.process_params (E:\\CursoBackend\\DesafioLoggers\\node_modules\\express\\lib\\router\\index.js:346:12)\n' +
+    '    at next (E:\\CursoBackend\\DesafioLoggers\\node_modules\\express\\lib\\router\\index.js:280:10)\n' +
+    '    at Function.handle (E:\\CursoBackend\\DesafioLoggers\\node_modules\\express\\lib\\router\\index.js:175:3)',
+  timestamp: '2024-06-14T19:37:27.653Z'
+}
+{
+  message: 'No se encontró token de autenticación',
+  level: 'fatal',
+  timestamp: '2024-06-14T19:38:53.339Z'
+}
+{
+  name: 'JsonWebTokenError',
+  message: 'Error al verificar la autenticación: jwt must be provided',
+  level: 'fatal',
+  stack: 'JsonWebTokenError: jwt must be provided\n' +
+    '    at module.exports [as verify] (E:\\CursoBackend\\DesafioLoggers\\node_modules\\jsonwebtoken\\verify.js:60:17)\n' +
+    '    at auth (file:///E:/CursoBackend/DesafioLoggers/src/middlewares/auth.js:20:23)\n' +
+    '    at Layer.handle [as handle_request] (E:\\CursoBackend\\DesafioLoggers\\node_modules\\express\\lib\\router\\layer.js:95:5)\n' +
+    '    at next (E:\\CursoBackend\\DesafioLoggers\\node_modules\\express\\lib\\router\\route.js:149:13)\n' +
+    '    at Route.dispatch (E:\\CursoBackend\\DesafioLoggers\\node_modules\\express\\lib\\router\\route.js:119:3)\n' +
+    '    at Layer.handle [as handle_request] (E:\\CursoBackend\\DesafioLoggers\\node_modules\\express\\lib\\router\\layer.js:95:5)\n' +
+    '    at E:\\CursoBackend\\DesafioLoggers\\node_modules\\express\\lib\\router\\index.js:284:15\n' +
+    '    at Function.process_params (E:\\CursoBackend\\DesafioLoggers\\node_modules\\express\\lib\\router\\index.js:346:12)\n' +
+    '    at next (E:\\CursoBackend\\DesafioLoggers\\node_modules\\express\\lib\\router\\index.js:280:10)\n' +
+    '    at Function.handle (E:\\CursoBackend\\DesafioLoggers\\node_modules\\express\\lib\\router\\index.js:175:3)',
+  timestamp: '2024-06-14T19:38:53.342Z'
 }

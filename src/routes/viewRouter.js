@@ -16,15 +16,28 @@ function handleRealTimeProductsSocket(io) {
 }
 
 routerView.get("/", async (req, res) => {
-  res.status(200).render("home", { login: req.session.usuario });
+  //verificar existencia de cookie
+  if (req.signedCookies.appToken) {
+    return res.status(200).render("home", { login: req.user });
+  } else {
+    return res.status(200).render("home");
+  }
 });
 
 routerView.get("/registro", (req, res) => {
-  res.status(200).render("registros", { login: req.session.usuario });
+  if (req.signedCookies.appToken) {
+    return res.status(200).render("registros", { login: req.user });
+  } else {
+    return res.status(200).render("registros");
+  }
 });
 
 routerView.get("/login", (req, res) => {
-  return res.status(200).render("login", { login: req.session.usuario });
+  if (req.signedCookies.appToken) {
+    return res.status(200).render("login", { login: req.user });
+  } else {
+    return res.status(200).render("login");
+  }
 });
 
 routerView.get("/products", auth, viewController.getProduct);
