@@ -1,8 +1,13 @@
+{{>menu}}
+
 {{#if login}}
-<h2>Ya estás logueado</h2>
+<div class="login-container">
+  <h2>Ya estás logueado</h2>
+</div>
 
 {{else}}
-<h2>Login de Usuarios:</h2>
+<div class="login-container">
+  <h2>Iniciar sesion</h2>
 
 <a href="/api/sessions/github" class="github-session">Ingresa con GitHub <i class="fa fa-github"></i> </a>
 
@@ -14,8 +19,13 @@
   <input type="submit" class="btn-form" id="btn-form" value="Ingresar" />
 
 </form>
+
+<a href="/api/sessions/password-reset" class="resetPassword">¿Olvidó su contraseña?</a>
+
+
+</div>
 {{/if}}
 
-{{>menu}}
+
 
 <script src="js/login.js"></script>

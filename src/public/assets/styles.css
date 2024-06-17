@@ -1,17 +1,23 @@
 * {
   font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
-  background: #fef4e1;
+  /* background: #fef4e1; */
 }
 
 h1,
 h2 {
   font-size: 4em;
   margin: 20px 40px;
+  color: #fff
+}
+
+body {
+  background-color: #0a0235;
 }
 
 .box-profile {
   float: right;
-  border: 2px solid #000;
+  color: #fff;
+  border: 2px solid #ffffff;
   border-radius: 20px;
   padding: 20px;
 }
@@ -22,12 +28,29 @@ h2 {
 }
 
 .btn-logout {
-  color: #ff0000;
+  color: #ffffff;
+  background: #ff0000;
   display: inline-block;
   padding: 10px;
   border-radius: 10px;
-  border: 2px solid #000;
+  border: 2px solid #ffffff;
   text-decoration: none;
+}
+.menu-container {
+  display: flex;
+  align-items: center;
+  gap: 20px
+}
+
+.container-home {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+
+  .menu-container {
+    padding: 0;
+  }
 }
 
 .products-items {
@@ -56,6 +79,7 @@ h2 {
 }
 
 ul li {
+  color: #fff;
   list-style-type: none;
   font-size: 1.2em;
   margin: 5px 0;
@@ -70,18 +94,46 @@ i {
 }
 
 a {
-  color: #000;
+  color: #ffffff;
   display: inline-block;
   padding: 10px;
   border-radius: 10px;
-  border: 2px solid #000;
+  border: 2px solid #ffffff;
   text-decoration: none;
   transition: all 0.3s ease;
+}
+
+.login-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
 }
 
 .box-realtime {
   display: grid;
   grid-template-columns: repeat(2, 1fr);
+    label {
+      color: #fff;
+    }
+
+    textarea {
+      resize: none;
+      height: 150px;
+      border-radius: 10px;
+      padding: 10px;
+      outline: none
+    }
+
+    select {
+      border-radius: 10px;
+      padding: 4px;
+
+    }
+}
+
+.subtotal-cart {
+  color: #fff
 }
 
 .form-addproduct {
@@ -92,12 +144,30 @@ a {
 
 .github-session {
   color: #fff;
-  margin: 0 50px;
+  margin: 20px;
   background-color: #171515;
 
   i {
     background-color: #171515;
   }
+}
+
+.container-register {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.box-form-register {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  padding: 0;
+
+    input {
+      width: 300px;
+    }
 }
 
 .box-login {
@@ -106,6 +176,8 @@ a {
   justify-content: center;
   flex-direction: column;
   width: 500px;
+  padding: 10px 0;
+  margin: 0;
 }
 
 button {
@@ -124,11 +196,17 @@ button:hover {
 .btn-form {
   cursor: pointer;
   transition: all 0.3s ease;
+  color: #fff;
+  background: #4c00ff;
 }
 
 .btn-form:hover {
-  background: #004f0c;
-  color: #fff;
+  color: #000;
+  opacity: .5;
+}
+
+.btn-form:focus{
+  background-color: #4c00ff;
 }
 
 form {
@@ -192,4 +270,45 @@ input:focus {
 .remove-all-items:hover {
   background: #ff0000;
   color: #fff;
+}
+
+.resetPassword {
+  border: none;
+  color: #2b00ff;
+}
+
+.resetPassword:hover {
+  color: #ff0000;
+  box-shadow: none;
+}
+
+.box-password-reset {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.form-password-reset {
+  display: flex;
+  gap: 15px;
+  flex-direction: column;
+  input {
+    width: 350px;
+  }
+}
+
+.btn-email-password {
+  background: #4c00ff;
+  color: #fff
+}
+
+.form-new-pass {
+  display: flex;
+  gap: 15px;
+  flex-direction: column;
+  input {
+    width: 350px;
+  }
 }

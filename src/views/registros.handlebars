@@ -1,11 +1,14 @@
-{{#if login}}
+{{>menu}}
+
+<div class="container-register">
+  {{#if login}}
 
 <h2>Ya estás logueado</h2>
 
 {{else}}
 <h2>Registro de Usuarios:</h2>
 
-<form action="/api/sessions/registro" method="post">
+<form action="/api/sessions/registro" method="post" class="box-form-register">
 
   <input type="text" name="nombre" placeholder="Ingrese nombre" />
   <input type="text" name="apellido" placeholder="Ingrese apellido" />
@@ -18,5 +21,6 @@
 </form>
 
 {{/if}}
+</div>
 
-{{>menu}}
+

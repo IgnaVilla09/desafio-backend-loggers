@@ -20,7 +20,7 @@
 {{/if}}
 
 <div class="cart-subtotal">
-  <h3>Subtotal: ${{cart.subtotal}}</h3>
+  <h3 class="subtotal-cart">Subtotal: ${{cart.subtotal}}</h3>
 
   {{#if (gt cart.subtotal 0)}}
     <a href="{{cart._id}}/purchase" class="btn-purchase">CONCRETAR COMPRA</a>

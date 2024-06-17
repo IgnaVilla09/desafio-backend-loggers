@@ -19,9 +19,11 @@ document.addEventListener("DOMContentLoaded", () => {
 
         if (response.ok) {
           const data = await response.json();
+          alert("Producto agregado al carrito correctamente")
           console.log("Producto agregado al carrito:", data);
         } else {
           const errorData = await response.json();
+          alert("Intente nuevamente")
           console.error("Error al agregar el producto al carrito:", errorData);
         }
       } catch (error) {

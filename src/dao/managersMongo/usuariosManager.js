@@ -12,6 +12,7 @@ export class UsuariosManagerMongo {
 
   async update(query, newData) {
     try {
+
       const updatedUser = await usuariosModelo.findOneAndUpdate(
         query,
         newData,

@@ -1,10 +1,16 @@
 import { Router } from "express";
 import passport from "passport";
 import jwt from "jsonwebtoken";
+import { creaHash } from "../utils.js";
+import {transporter } from "../config/mailing.config.js";
 import cookieParser from "cookie-parser";
 import { usuariosModelo } from "../dao/models/usuario.modelo.js";
 import { UsuarioDTO } from "../dto/usuarioDTO.js";
 import { config } from "../config/config.js";
+import { UsuariosManagerMongo } from "../dao/managersMongo/usuariosManager.js";
+
+const usuariosManager = new UsuariosManagerMongo()
+
 export const router = Router();
 
 //Registro
@@ -61,7 +67,6 @@ router.get("/errorGithub", (req, res) => {
 
 router.get(
   "/github",
-  passport.authenticate("jwt", { session: false }),
   passport.authenticate("github"),
   (req, res) => {}
 );
@@ -71,12 +76,26 @@ router.get(
   passport.authenticate("github", {
     failureRedirect:
       "/api/sessions/errorGithub?mensaje=Error en autenticación con github",
-  }),
+      session: false,}),
   (req, res) => {
-    res.setHeader("Content-Type", "application/json");
-    return res.redirect("/products");
+
+  try {
+      let payload = { userID: req.user.id, email: req.user.email, role: req.user.role, profileGithub: req.user.profileGithub.displayName }
+
+      let token = jwt.sign(payload, config.SECRET, { expiresIn: "1h" });
+
+      res.cookie("appToken", token, {
+        maxAge: 1000 * 60 * 60,
+        signed: true,
+        httpOnly: true,
+      }); 
+  } catch (error) {
+      fatal.error(error);
   }
-);
+      res.setHeader("Content-Type", "application/json");
+      return res.redirect("/products");
+    }
+  );
 
 //Logout
 router.get("/logout", (req, res) => {
@@ -85,7 +104,8 @@ router.get("/logout", (req, res) => {
 });
 
 //Current
-router.get("/current", async (req, res) => {
+router.get("/current", 
+  passport.authenticate("jwt", { session: false }), async (req, res) => {
   try {
     const userId = req.user._id;
 
@@ -101,3 +121,73 @@ router.get("/current", async (req, res) => {
     res.status(500).json({ error: error.message });
   }
 });
+
+router.get("/password-reset", (req, res) => {
+  res.render("password-reset");
+});
+
+// Send password reset token
+router.post("/sendTokenPassword", async (req, res) => {
+  try {
+
+    let emailUser = req.body.email
+
+    // const usuario = await usuariosManager.getBy(emailUser);
+
+    // if (!usuario) {
+    //   return res.status(404).json({ message: "Usuario no encontrado" });
+    // }
+
+    // console.log(usuario)
+
+    const token = jwt.sign({ email: emailUser }, config.SECRET, { expiresIn: "1h" });
+
+    const mailOptions = {
+      from: `${config.EMAIL}`,
+      to: emailUser,
+      subject: "Recuperación de contraseña",
+      html: `<a href="http://localhost:8080/api/sessions/reset-password?email=${emailUser}&token=${token}">Click aquí para recuperar tu contraseña</a>`,
+      attachments: [],
+    };
+
+    await transporter.sendMail(mailOptions);
+
+    res.status(200).json({ message: "Token de recuperación de contraseña enviado" });
+  } catch (error) {
+    res.status(500).json({ error: error.message });
+  }
+});
+
+// Reset password
+router.get("/reset-password", (req, res) => {
+  
+  //extraer de params el token y el email
+  const token = req.query.token;
+  const email = req.query.email;
+
+  jwt.verify(token, config.SECRET, (err, decoded) => {
+    if (err) {
+      return res.status(401).json({ message: "Token inválido" });
+    }
+    res.render("new-password", { token, email });
+  });
+});
+
+//Actualizacion de contraseña en DB
+
+router.post("/update-password", async (req, res) => {
+  let password = req.body.password
+  let userEmail = req.body.email
+
+  password = creaHash(password);
+  
+  try {
+  //actualizar password en DB
+  const UserUpdate = usuariosManager.update({ email: userEmail }, { password: password });
+  res.redirect("/login")
+  } catch (error) {
+    req.logger.fatal("Usuario no encontrado para actualizar");
+    res.status(404).json({ error: "Usuario no encontrado" });
+  }
+
+})
