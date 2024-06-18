@@ -22,7 +22,7 @@ btnReset.addEventListener('click', async (e) => {
     if(response.ok === true){
         alert("Se ha enviado un email con el link para resetear la contraseña")
     }else{
-        alert("Ocurrió un error al enviar el email: " + response.status)
+        alert("Ocurrió un error al enviar el email: " + response.statusText)
     }
     
 })

@@ -132,13 +132,12 @@ router.post("/sendTokenPassword", async (req, res) => {
 
     let emailUser = req.body.email
 
-    // const usuario = await usuariosManager.getBy(emailUser);
+    const usuario = await usuariosManager.getByEmail(emailUser);
 
-    // if (!usuario) {
-    //   return res.status(404).json({ message: "Usuario no encontrado" });
-    // }
+    if (!usuario) {
+      return res.status(404).json({ message: "Usuario no encontrado" });
+    }
 
-    // console.log(usuario)
 
     const token = jwt.sign({ email: emailUser }, config.SECRET, { expiresIn: "1h" });
 
@@ -166,9 +165,11 @@ router.get("/reset-password", (req, res) => {
   const email = req.query.email;
 
   jwt.verify(token, config.SECRET, (err, decoded) => {
+
     if (err) {
-      return res.status(401).json({ message: "Token inválido" });
+      return res.redirect("/api/sessions/password-reset?mensaje=Token invalido o expirado");
     }
+
     res.render("new-password", { token, email });
   });
 });
@@ -176,18 +177,19 @@ router.get("/reset-password", (req, res) => {
 //Actualizacion de contraseña en DB
 
 router.post("/update-password", async (req, res) => {
-  let password = req.body.password
-  let userEmail = req.body.email
+  let newPassword = req.body.password;
+  let userEmail = req.body.email;
 
-  password = creaHash(password);
-  
   try {
-  //actualizar password en DB
-  const UserUpdate = usuariosManager.update({ email: userEmail }, { password: password });
-  res.redirect("/login")
+    // Actualizar password en la base de datos
+    const updatedUser = await usuariosManager.update({ email: userEmail }, { password: newPassword });
+    
+    // Aquí puedes enviar una respuesta si es necesario
+    res.status(200).json({ message: "Contraseña actualizada exitosamente" });
+    
   } catch (error) {
-    req.logger.fatal("Usuario no encontrado para actualizar");
-    res.status(404).json({ error: "Usuario no encontrado" });
+    // Manejo de errores
+    console.error("Error al actualizar la contraseña:", error.message);
+    res.status(400).json({ error: error.message }); // Devuelve el error al frontend
   }
-
-})
+});

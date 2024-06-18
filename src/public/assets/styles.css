@@ -209,6 +209,17 @@ button:hover {
   background-color: #4c00ff;
 }
 
+.btn-email-password{
+  cursor: pointer
+}
+
+.btn-email-password:focus {
+  background-color: #4c00ff;
+}
+.btn-email-password:hover {
+ opacity: .7;
+}
+
 form {
   padding: 50px;
 }
