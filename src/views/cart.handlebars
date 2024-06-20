@@ -1,13 +1,13 @@
 <h1>Carrito</h1>
 {{#if cart}}
   <ul >
-    
     {{#each cart.products}}
     <div class="box-item-cart">
       <li>{{title}} - ${{price}}</li>
       <li><strong>{{quantity}} unidades</strong></li>
       <button
         class="remove-item"
+        id="remove-item"
         data-cart-id-item="{{../cart._id}}"
         data-producto-id-item="{{productId}}"
       ><i class="fa fa-trash" style="color:red"></i></button>

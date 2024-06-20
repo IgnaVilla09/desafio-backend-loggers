@@ -1,6 +1,5 @@
 * {
   font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
-  /* background: #fef4e1; */
 }
 
 h1,
@@ -14,8 +13,14 @@ body {
   background-color: #0a0235;
 }
 
+.container-relative {
+  position: relative;
+}
+
 .box-profile {
-  float: right;
+  position: absolute;
+  top: 0;
+  right:0;
   color: #fff;
   border: 2px solid #ffffff;
   border-radius: 20px;
@@ -63,15 +68,27 @@ body {
 
 .product-list {
   display: flex;
-  gap: 50px;
-  margin: 50px 40px;
   flex-wrap: wrap;
+  gap: 50px;
+  margin: 40px 20px;
+}
+
+.item {
+  width: 400px
 }
 
 .product-list__items {
-  display: flex;
-  width: 400px;
-  justify-content: center;
+  display: grid;
+  grid-template-columns: 350px 50px;
+  grid-template-rows: repeat(2, 1fr);
+  align-items: center;
+}
+
+.btn-delete {
+  grid-column: 2/3;
+  grid-row:1/2;
+  width: 50px;
+  border-radius: 50%;
 }
 
 .product-list__items-btn {

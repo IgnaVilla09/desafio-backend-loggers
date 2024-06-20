@@ -39,10 +39,12 @@ app.engine(
       allowProtoMethodsByDefault: true,
     },
     helpers: {
-      gt: (a, b) => a > b,
+      gt: function(a, b) { return a > b; },
+      eq: function(a, b) { return a === b; },
     },
   })
 );
+
 app.set("view engine", "handlebars");
 app.set("views", path.join(__dirname, "views"));
 

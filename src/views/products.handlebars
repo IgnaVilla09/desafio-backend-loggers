@@ -1,3 +1,4 @@
+<div class="container-relative">
 <div class="box-profile">
   {{#if usuario.nombre}}
     <h4>Sesión de {{usuario.nombre}} - email:{{usuario.email}}</h4>
@@ -17,25 +18,29 @@
 <h1>Lista de productos</h1>
 
 <div class="cart-view-box">
-  <a href="api/carts/{{usuario.cartId}}" id="btn-view-cart" class="cart-view">
+  <a href="" id="btn-view-cart" class="cart-view">
     Ver el carrito
     <i class="fa fa-cart-plus"></i></a>
 </div>
 <ul class="product-list">
   {{#each products}}
-    <div>
-      <li class="product-list__items">{{this.title}}
+  <li class="item">
+    <div class="product-list__items">
+      <span >{{this.title}}
         -
         {{description}}
         - $
         {{price}}
-      </li>
+      </span>
       <button
         id="btn-add"
         class="product-list__items-btn"
         data-product-id="{{this._id}}"
       >Agregar al carrito</button>
-    </div>
+      <button class="btn-delete" data-product-id="{{this._id}}"><i class="fa fa-trash" style="color:red"></i></button>        
+      </div>
+  </li>
+    
   {{/each}}
 
 </ul>
@@ -60,4 +65,6 @@
 
 <a href="/products?pagina={{totalPages}}">Ult. Pagina.</a>
 
-<script src="js/cart.js"></script>
+</div>
+<script src="/js/cart.js"></script>
+<script src="/js/products.js"></script>

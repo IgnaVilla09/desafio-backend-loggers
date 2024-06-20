@@ -1,4 +1,5 @@
 import { modeloProductos } from "../dao/models/products.modelo.js";
+import { usuariosModelo } from "../dao/models/usuario.modelo.js";
 import { productServices } from "../services/product.service.js";
 import CustomError from "../utils/CustomErrors.js";
 import { ERRORES } from "../utils/errors.js";
@@ -46,6 +47,19 @@ export default class productController {
       status,
     } = req.body;
 
+    let owner = req.user._id
+
+    console.log(owner)
+   
+    const ownerAdmin = await usuariosModelo.findById(owner)
+
+    if(ownerAdmin.role == "admin") {
+      owner = "admin"
+    }
+
+
+    console.log(owner)
+
     if (!title || !code || !price || !stock) {
       try {
         CustomError.createError({
@@ -64,6 +78,7 @@ export default class productController {
       const newProduct = await productServices.addProduct(
         title,
         description,
+        owner,
         code,
         price,
         stock,
@@ -94,13 +109,38 @@ export default class productController {
 
   static deleteProduct = async (req, res) => {
     const productId = req.params.pid;
+    const product = await productServices.getProductById(productId);
+    
+    let userRole = req.user.role
+    let userId = req.user._id
+    
+    if(userRole == "admin"){
+      try {
+        await productServices.deleteProduct(productId)
+        res.status(200).json({message:"Producto eliminado con éxito"})
+      } catch (error) {
+        req.logger.fatal("Producto no encontrado para eliminar")
+        res.status(400).json({error:`Producto no encontrado`})
+      }
+    } else {
+    if(userRole == "Premium" && product.owner == userId){
+      try {
+        await productServices.deleteProduct(productId);
+        res.status(200).json({message:"Producto eliminado con éxito"});
+      } catch (error) {
+        req.logger.fatal("Producto no encontrado para eliminar");
+        res.status(404).json({ error: "Producto no encontrado" });
+      }
+    }else {
+      res.status(401).json({ error: "No tiene permisos para eliminar este producto" });
+    };
 
-    try {
-      await productServices.deleteProduct(productId);
-      res.status(204).end();
-    } catch (error) {
-      req.logger.fatal("Producto no encontrado para eliminar");
-      res.status(404).json({ error: "Producto no encontrado" });
+  
     }
-  };
+
+        
+
+
+
+  }
 }

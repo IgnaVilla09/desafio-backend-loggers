@@ -1,4 +1,3 @@
-import { usuariosModelo } from "../dao/models/usuario.modelo.js";
 import jwt from "jsonwebtoken";
 import { logger } from "../utils.js";
 import CustomError from "../utils/CustomErrors.js";
@@ -15,6 +14,7 @@ export const auth = async (req, res, next) => {
   if (!token) {
     logger.fatal("No se encontró token de autenticación");
   }
+
 
   try {
     let usuario = jwt.verify(token, config.SECRET);
@@ -46,7 +46,7 @@ export const adminAuth = async (req, res, next) => {
 };
 
 export const userAuth = async (req, res, next) => {
-  if (!req.user || req.user.role !== "usuario") {
+  if (req.user.role !== "Premium" && req.user.role !== "usuario") {
     req.logger.fatal("Administrador sin autorización de ejecutar función");
     return res.status(403).json({
       error: `No tiene los privilegios necesarios para acceder a esta función`,
@@ -54,3 +54,13 @@ export const userAuth = async (req, res, next) => {
   }
   next();
 };
+
+export const premiumAuth = async (req, res, next) => { 
+  if (req.user.role !== "Premium" && req.user.role !== "admin"  ) {
+    req.logger.fatal("Usuario sin autorización de ejecutar función");
+    return res.status(403).json({
+      error: `No tiene los privilegios necesarios para acceder a esta función. Usuario: ${req.user.role}` ,
+    });
+  }
+  next();
+}

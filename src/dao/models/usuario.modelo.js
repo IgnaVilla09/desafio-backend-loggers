@@ -7,7 +7,7 @@ export const usuariosModelo = mongoose.model(
       nombre: String,
       apellido: String,
       email: { type: String, required: true, unique: true },
-      password: { type: String, required: true },
+      password: String ,
       age: { type: Number, min: 18 },
       cartId: { type: mongoose.Schema.Types.ObjectId, ref: "Cart" },
       role: { type: String, default: "usuario" },

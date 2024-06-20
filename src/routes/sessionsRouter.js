@@ -5,7 +5,7 @@ import { creaHash } from "../utils.js";
 import {transporter } from "../config/mailing.config.js";
 import cookieParser from "cookie-parser";
 import { usuariosModelo } from "../dao/models/usuario.modelo.js";
-import { UsuarioDTO } from "../dto/usuarioDTO.js";
+import { UsuarioDTO, UsuarioGitDTO } from "../dto/usuarioDTO.js";
 import { config } from "../config/config.js";
 import { UsuariosManagerMongo } from "../dao/managersMongo/usuariosManager.js";
 
@@ -106,27 +106,53 @@ router.get("/logout", (req, res) => {
 //Current
 router.get("/current", 
   passport.authenticate("jwt", { session: false }), async (req, res) => {
-  try {
-    const userId = req.user._id;
 
-    const usuario = await usuariosModelo.findById(userId);
+    const user = req.user._id;
+    const userId = req.user.userID;
 
-    if (!usuario) {
-      return res.status(404).json({ message: "Usuario no encontrado" });
+    if(user) {
+      try {
+        const usuario = await usuariosModelo.findById(user)
+
+        if(!usuario){
+          return res.status(404).json({ message: "Usuario no encontrado" });
+        }
+
+        let usuarioDTO = new UsuarioDTO(usuario);
+        res.json(usuarioDTO);
+      } catch (error) {
+        res.status(500).json({ error: error.message });
+      }
     }
 
-    let usuarioDTO = new UsuarioDTO(usuario); // Mandamos usuarioDTO para evitar enviar información innecesaria
-    res.json(usuarioDTO);
-  } catch (error) {
-    res.status(500).json({ error: error.message });
-  }
+    if (userId){
+      try {
+        const usuario = await usuariosModelo.findById(userId);
+    
+        if (!usuario) {
+          return res.status(404).json({ message: "Usuario de git no encontrado" });
+        }
+    
+        let usuarioDTO= new UsuarioGitDTO(usuario);
+        
+         res.json(usuarioDTO);
+        
+      } catch (error) {
+        res.status(500).json({ error: error.message });
+      }
+    }
+  
 });
 
+// RECUPERACION DE CONTRASEÑA
+
+// Renderizar formulario de recuperación de contraseña
 router.get("/password-reset", (req, res) => {
   res.render("password-reset");
 });
 
-// Send password reset token
+
+//Envio token por mail
 router.post("/sendTokenPassword", async (req, res) => {
   try {
 
@@ -157,7 +183,7 @@ router.post("/sendTokenPassword", async (req, res) => {
   }
 });
 
-// Reset password
+// Renderizar inputs de nueva contraseña
 router.get("/reset-password", (req, res) => {
   
   //extraer de params el token y el email

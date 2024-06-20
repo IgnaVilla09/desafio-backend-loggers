@@ -1,10 +1,14 @@
 document.addEventListener("DOMContentLoaded", () => {
+
   const addToCartButtons = document.querySelectorAll("#btn-add");
   const removeAllitems = document.querySelectorAll(".remove-all-items");
   const removeItem = document.querySelectorAll(".remove-item");
 
   addToCartButtons.forEach((button) => {
-    button.addEventListener("click", async () => {
+    button.addEventListener("click", async (e) => {
+
+      e.preventDefault()
+
       const cartId = await obtenerElIdDelCarrito();
       const productId = obtenerElIdDelProducto(button);
 
@@ -23,7 +27,7 @@ document.addEventListener("DOMContentLoaded", () => {
           console.log("Producto agregado al carrito:", data);
         } else {
           const errorData = await response.json();
-          alert("Intente nuevamente")
+          alert(errorData.error)
           console.error("Error al agregar el producto al carrito:", errorData);
         }
       } catch (error) {
@@ -34,6 +38,9 @@ document.addEventListener("DOMContentLoaded", () => {
 
   removeAllitems.forEach((button) => {
     button.addEventListener("click", async (event) => {
+
+      event.preventDefault()
+
       const cartId = event.target.getAttribute("data-cart-id");
 
       try {
@@ -56,7 +63,11 @@ document.addEventListener("DOMContentLoaded", () => {
 
   removeItem.forEach((button) => {
     button.addEventListener("click", async (event) => {
+
+      event.preventDefault()
+
       const cartId = event.target.getAttribute("data-cart-id-item");
+      console.log(cartId)
       const productId = event.target.getAttribute("data-producto-id-item");
 
       try {

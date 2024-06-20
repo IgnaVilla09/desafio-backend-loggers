@@ -5,6 +5,7 @@
       <li>{{this.title}} - {{this.description}} - $ {{this.price}} </li>
     {{/each}}
 
+
   </ul>
   <form action="/api/products" method="post" class="form-addproduct">
     <label for="title">Título:</label>
@@ -12,6 +13,8 @@
 
     <label for="description">Descripción:</label>
     <textarea id="description" name="description"></textarea>
+
+    <input type="text" id="owner" name="owner" value="{{this.owner}}" hidden />
 
     <label for="code">Código:</label>
     <input type="text" id="code" name="code" />
@@ -46,3 +49,4 @@
   socket.on('products', (products) => { console.log('Productos en tiempo real:',
   products); });
 </script>
+

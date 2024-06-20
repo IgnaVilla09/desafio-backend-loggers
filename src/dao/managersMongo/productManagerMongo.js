@@ -22,6 +22,7 @@ export class productManagerMongo {
   async addProduct(
     title,
     description,
+    owner,
     code,
     price,
     stock,
@@ -35,6 +36,7 @@ export class productManagerMongo {
         description: description,
         price: price,
         thumbnails: thumbnails,
+        owner: owner,
         code: code,
         stock: stock,
         status: status,
@@ -55,6 +57,8 @@ export class productManagerMongo {
       });
       if (!deletedProduct) {
         throw new Error("Producto no encontrado para eliminar");
+      }else {
+        console.log("Producto eliminado con éxito");
       }
       return deletedProduct;
     } catch (error) {

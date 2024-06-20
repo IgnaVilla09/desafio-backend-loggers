@@ -12,6 +12,7 @@ class productService {
   async addProduct(
     title,
     description,
+    owner,
     code,
     price,
     stock,
@@ -22,6 +23,7 @@ class productService {
     return await this.productDAO.addProduct(
       title,
       description,
+      owner,
       code,
       price,
       stock,
@@ -36,7 +38,7 @@ class productService {
   }
 
   async deleteProduct(productId) {
-    return await this.productDAO.removeProductsCart(productId);
+    return await this.productDAO.deleteProduct(productId);
   }
 }
 
