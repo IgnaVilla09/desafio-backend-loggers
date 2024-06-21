@@ -108,39 +108,39 @@ export default class productController {
   };
 
   static deleteProduct = async (req, res) => {
-    const productId = req.params.pid;
-    const product = await productServices.getProductById(productId);
-    
-    let userRole = req.user.role
-    let userId = req.user._id
-    
-    if(userRole == "admin"){
-      try {
-        await productServices.deleteProduct(productId)
-        res.status(200).json({message:"Producto eliminado con éxito"})
-      } catch (error) {
-        req.logger.fatal("Producto no encontrado para eliminar")
-        res.status(400).json({error:`Producto no encontrado`})
-      }
-    } else {
-    if(userRole == "Premium" && product.owner == userId){
-      try {
-        await productServices.deleteProduct(productId);
-        res.status(200).json({message:"Producto eliminado con éxito"});
-      } catch (error) {
-        req.logger.fatal("Producto no encontrado para eliminar");
-        res.status(404).json({ error: "Producto no encontrado" });
-      }
-    }else {
-      res.status(401).json({ error: "No tiene permisos para eliminar este producto" });
-    };
+    try {
+      const productId = req.params.pid;
+      const product = await productServices.getProductById(productId);
+      
+      let userRole = req.user.role
+      let userId = req.user._id  
 
-  
+
+      if(userRole == "admin"){
+        try {
+          await productServices.deleteProduct(productId)
+          res.status(200).json({message:"Producto eliminado con éxito"})
+        } catch (error) {
+          req.logger.fatal("Producto no encontrado para eliminar")
+          res.status(400).json({error:`Producto no encontrado`})
+        }
+      } else {
+        if(userRole == "Premium" && product.owner == userId){
+          try {
+            await productServices.deleteProduct(productId);
+            res.status(200).json({message:"Producto eliminado con éxito"});
+          } catch (error) {
+            req.logger.fatal("Producto no encontrado para eliminar");
+            res.status(404).json({ error: "Producto no encontrado" });
+          }
+        }else {
+          res.status(401).json({ error: "No tiene permisos para eliminar este producto" });
+        };
+      }
+    } catch (error) {
+      req.logger.fatal("Error al eliminar producto" + error.message);
+      res.status(400).json({error:`Intente nuevamente`})
     }
-
-        
-
-
-
+  
   }
 }

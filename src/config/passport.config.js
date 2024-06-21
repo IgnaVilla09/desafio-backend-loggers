@@ -85,9 +85,12 @@ export const initPassport = () => {
 
           const userId = nuevoUsuario._id;
 
-          const newCart = await CartManagerMDB.createCartForUser(userId);
-          await usuariosMDB.update({ _id: userId }, { cartId: newCart._id });
+          if(!nuevoUsuario.cartId){
+            const newCart = await CartManagerMDB.createCartForUser(userId);
+            await usuariosModelo.findByIdAndUpdate(userId, { cartId: newCart._id });
+          }
 
+          
           return done(null, nuevoUsuario);
         } catch (error) {
           return done(error);

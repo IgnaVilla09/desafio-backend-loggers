@@ -7,6 +7,7 @@ import handlebars from "express-handlebars";
 import { initPassport } from "./config/passport.config.js";
 import passport from "passport";
 import { router as productsRouter } from "./routes/productsRouter.js";
+import { router as userRouter } from "./routes/userRouter.js";
 import { router as cartRouter } from "./routes/cartRouter.js";
 import { router as chatRouter } from "./routes/chatRouter.js";
 import { router as loggerRouter } from "./routes/loggerRouter.js";
@@ -40,7 +41,6 @@ app.engine(
     },
     helpers: {
       gt: function(a, b) { return a > b; },
-      eq: function(a, b) { return a === b; },
     },
   })
 );
@@ -62,6 +62,7 @@ app.use(express.static(path.join(__dirname, "public")));
 app.use("/api/products", productsRouter);
 app.use("/api/carts", cartRouter);
 app.use("/api/sessions", sessionRouter);
+app.use("/api/user", userRouter);
 app.use("/chat", chatRouter(io));
 app.use("/mockingproducts", mockingProducts);
 app.use("/loggerTest", loggerRouter);

@@ -163,3 +163,145 @@
   level: 'fatal',
   timestamp: '2024-06-20T04:46:06.470Z'
 }
+{
+  message: 'El usuario es el dueño del producto',
+  level: 'fatal',
+  timestamp: '2024-06-20T15:39:30.779Z'
+}
+{
+  message: 'El usuario es el dueño del producto',
+  level: 'fatal',
+  timestamp: '2024-06-20T16:20:48.528Z'
+}
+{
+  message: 'El usuario es el dueño del producto',
+  level: 'fatal',
+  timestamp: '2024-06-20T16:26:16.464Z'
+}
+{
+  message: 'Error al procesar la solicitud de vista del carrito',
+  level: 'fatal',
+  timestamp: '2024-06-20T16:26:41.853Z'
+}
+{
+  message: 'Error al procesar la solicitud de vista del carrito',
+  level: 'fatal',
+  timestamp: '2024-06-20T16:26:53.924Z'
+}
+{
+  message: 'Error al procesar la solicitud de vista del carrito',
+  level: 'fatal',
+  timestamp: '2024-06-20T16:30:25.693Z'
+}
+{
+  message: 'El usuario es el dueño del producto',
+  level: 'fatal',
+  timestamp: '2024-06-20T16:50:02.248Z'
+}
+{
+  message: 'El usuario es el dueño del producto',
+  level: 'fatal',
+  timestamp: '2024-06-20T16:51:38.657Z'
+}
+{
+  message: `Error al eliminar productoError al encontrar el producto en DB: Cast to ObjectId failed for value "{ _id: 'null' }" (type Object) at path "_id" for model "products"`,
+  level: 'fatal',
+  timestamp: '2024-06-20T16:59:09.670Z'
+}
+{
+  message: 'Administrador sin autorización de ejecutar función',
+  level: 'fatal',
+  timestamp: '2024-06-20T17:02:35.707Z'
+}
+{
+  message: 'Error: Error al actualizar el usuario: data and hash arguments required\n' +
+    '    at UsuariosManagerMongo.update (file:///D:/desafio-backend-loggers/src/dao/managersMongo/usuariosManager.js:40:13)\n' +
+    '    at process.processTicksAndRejections (node:internal/process/task_queues:95:5)\n' +
+    '    at async Strategy._verify (file:///D:/desafio-backend-loggers/src/config/passport.config.js:89:11)',
+  level: 'fatal',
+  timestamp: '2024-06-20T17:13:09.044Z'
+}
+{
+  message: 'Error al añadir producto al carrito',
+  level: 'fatal',
+  timestamp: '2024-06-20T17:20:15.727Z'
+}
+{
+  message: 'Error al añadir producto al carrito',
+  level: 'fatal',
+  timestamp: '2024-06-20T17:25:15.975Z'
+}
+{
+  message: 'Error al añadir producto al carrito',
+  level: 'fatal',
+  timestamp: '2024-06-20T23:32:56.224Z'
+}
+{
+  message: 'Error al añadir producto al carrito',
+  level: 'fatal',
+  timestamp: '2024-06-20T23:33:57.265Z'
+}
+{
+  message: 'Error al añadir producto al carrito',
+  level: 'fatal',
+  timestamp: '2024-06-20T23:36:30.437Z'
+}
+{
+  message: 'Error al añadir producto al carrito',
+  level: 'fatal',
+  timestamp: '2024-06-20T23:38:17.183Z'
+}
+{
+  message: 'Error: Error al actualizar el usuario: data and hash arguments required\n' +
+    '    at UsuariosManagerMongo.update (file:///D:/desafio-backend-loggers/src/dao/managersMongo/usuariosManager.js:40:13)\n' +
+    '    at process.processTicksAndRejections (node:internal/process/task_queues:95:5)\n' +
+    '    at async Strategy._verify (file:///D:/desafio-backend-loggers/src/config/passport.config.js:89:11)',
+  level: 'fatal',
+  timestamp: '2024-06-20T23:42:16.720Z'
+}
+{
+  message: 'Error: Error al actualizar el usuario: data and hash arguments required\n' +
+    '    at UsuariosManagerMongo.update (file:///D:/desafio-backend-loggers/src/dao/managersMongo/usuariosManager.js:40:13)\n' +
+    '    at process.processTicksAndRejections (node:internal/process/task_queues:95:5)\n' +
+    '    at async Strategy._verify (file:///D:/desafio-backend-loggers/src/config/passport.config.js:90:13)',
+  level: 'fatal',
+  timestamp: '2024-06-20T23:45:44.428Z'
+}
+{
+  message: 'Error: Error al actualizar el usuario: data and hash arguments required\n' +
+    '    at UsuariosManagerMongo.update (file:///D:/desafio-backend-loggers/src/dao/managersMongo/usuariosManager.js:40:13)\n' +
+    '    at process.processTicksAndRejections (node:internal/process/task_queues:95:5)\n' +
+    '    at async Strategy._verify (file:///D:/desafio-backend-loggers/src/config/passport.config.js:90:13)',
+  level: 'fatal',
+  timestamp: '2024-06-20T23:46:38.030Z'
+}
+{
+  message: 'Producto no encontrado con ID',
+  level: 'fatal',
+  timestamp: '2024-06-21T00:21:55.112Z'
+}
+{
+  message: 'Usuario sin autorización de ejecutar función',
+  level: 'fatal',
+  timestamp: '2024-06-21T03:07:04.178Z'
+}
+{
+  message: 'Usuario sin autorización de ejecutar función',
+  level: 'fatal',
+  timestamp: '2024-06-21T03:33:13.590Z'
+}
+{
+  message: 'Usuario sin autorización de ejecutar función',
+  level: 'fatal',
+  timestamp: '2024-06-21T03:33:55.899Z'
+}
+{
+  message: 'Usuario sin autorización de ejecutar función',
+  level: 'fatal',
+  timestamp: '2024-06-21T03:34:43.630Z'
+}
+{
+  message: 'Usuario sin autorización de ejecutar función',
+  level: 'fatal',
+  timestamp: '2024-06-21T03:35:40.760Z'
+}

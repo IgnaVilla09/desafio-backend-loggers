@@ -1,5 +1,6 @@
 export class UsuarioDTO {
   constructor(usuario) {
+    this.id = usuario._id;
     this.firstname = usuario.nombre;
     this.lastname = usuario.apellido
       ? usuario.apellido
@@ -7,7 +8,7 @@ export class UsuarioDTO {
     this.rol = usuario.role;
     this.email = usuario.email;
     this.age = usuario.age;
-    this.cartId = usuario.cartId; // Se envía cartId para poder ser utilizado en el frontend
+    this.cartId = usuario.cartId; 
   }
 }
 

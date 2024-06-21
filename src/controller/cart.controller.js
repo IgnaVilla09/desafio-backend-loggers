@@ -1,6 +1,7 @@
 import { cartServices } from "../services/cart.service.js";
 import { modeloProductos } from "../dao/models/products.modelo.js";
 import { modeloCarrito } from "../dao/models/cart.modelo.js";
+import { usuariosModelo } from "../dao/models/usuario.modelo.js";
 export default class cartController {
   static getCart = async (req, res) => {
     const cartId = req.params.cid;
@@ -65,7 +66,7 @@ export default class cartController {
       });
     } catch (error) {
       req.logger.fatal("Error al procesar la solicitud de vista del carrito");
-      res.status(500).send("Error al procesar la solicitud.");
+      res.status(500).send("Error al procesar la solicitud." + error.message);
     }
   };
 
@@ -73,12 +74,47 @@ export default class cartController {
     const cartId = req.params.cid;
     const productId = req.params.pid;
 
-    try {
-      const addProduct = await cartServices.addProductCart(cartId, productId);
-      res.status(200).json(addProduct);
-    } catch (error) {
-      req.logger.fatal("Error al añadir producto al carrito");
-      res.status(400).json({ error: error.message });
+    const userId = req.user._id;
+    const userGitId = req.user.userID;
+    const user = await usuariosModelo.findById(userId);
+    const product = await modeloProductos.findById(productId);
+
+    if (userGitId == product.owner) {
+      req.logger.fatal("El usuario es el dueño del producto");
+      return res
+        .status(400)
+        .json({ error: "No puedes añadir un producto tuyo al carrito" });
+    } else {
+      try {
+        const addProduct = await cartServices.addProductCart(
+          cartId,
+          productId
+        );
+        return res.status(200).json(addProduct);
+      } catch (error) {
+        req.logger.fatal("Error al añadir producto al carrito");
+        res.status(400).json({ error: error.message });
+      }
+    }
+
+    if (user) {
+      if (user.role == "Premium" && userId == product.owner) {
+        req.logger.fatal("El usuario es el dueño del producto");
+        return res
+          .status(400)
+          .json({ error: "No puedes añadir un producto tuyo al carrito" });
+      } else {
+        try {
+          const addProduct = await cartServices.addProductCart(
+            cartId,
+            productId
+          );
+          res.status(200).json(addProduct);
+        } catch (error) {
+          req.logger.fatal("Error al añadir producto al carrito");
+          res.status(400).json({ error: error.message });
+        }
+      }
     }
   };
 

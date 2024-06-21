@@ -1,9 +1,9 @@
 import { Router } from "express";
 import passport from "passport";
 import jwt from "jsonwebtoken";
-import { creaHash } from "../utils.js";
 import {transporter } from "../config/mailing.config.js";
 import cookieParser from "cookie-parser";
+import {auth, premiumAuth} from "../middlewares/auth.js";
 import { usuariosModelo } from "../dao/models/usuario.modelo.js";
 import { UsuarioDTO, UsuarioGitDTO } from "../dto/usuarioDTO.js";
 import { config } from "../config/config.js";
@@ -143,6 +143,7 @@ router.get("/current",
     }
   
 });
+
 
 // RECUPERACION DE CONTRASEÑA
 

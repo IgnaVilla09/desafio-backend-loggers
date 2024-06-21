@@ -1,3 +1,4 @@
+import { modeloCarrito } from "../models/cart.modelo.js";
 import { modeloProductos } from "../models/products.modelo.js";
 
 export class productManagerMongo {
@@ -58,6 +59,13 @@ export class productManagerMongo {
       if (!deletedProduct) {
         throw new Error("Producto no encontrado para eliminar");
       }else {
+        // ELIMINAR EL PRODUCTO TAMBIEN EN EL CARRITO
+
+        await modeloCarrito.updateMany(
+          { "products.productId": id },
+          { $pull: { products: { productId: id } } }
+        );
+
         console.log("Producto eliminado con éxito");
       }
       return deletedProduct;
