@@ -26,11 +26,15 @@ btnLogin.addEventListener("click", async (e) => {
     body: JSON.stringify(body),
   });
 
-  window.location.href = "/products";
-
-  if (respuesta.status == 200) {
-    let datos = await respuesta.json();
+  if (respuesta.status === 200) {
+    alert("Login exitoso");
+    window.location.href = "/products";
   } else {
-    alert(`${respuesta.status} ${respuesta.statusText}`);
+    if (respuesta.status === 401) {
+      alert("Email o contraseña incorrectos");
+      return;
+    }
+    let errorText = await respuesta.text(); 
+    alert(`Error: ${errorText}`);
   }
 });

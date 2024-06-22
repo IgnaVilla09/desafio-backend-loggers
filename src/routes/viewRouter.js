@@ -39,10 +39,9 @@ routerView.get("/registro", (req, res) => {
 routerView.get("/login", (req, res) => {
   if (req.signedCookies.appToken) {
     return res
-      .status(200)
       .render("login", { login: req.signedCookies.appToken });
   } else {
-    return res.status(200).render("login");
+    return res.render("login");
   }
 });
 

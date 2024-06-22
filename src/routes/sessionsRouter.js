@@ -1,13 +1,13 @@
 import { Router } from "express";
 import passport from "passport";
-import jwt from "jsonwebtoken";
-import {transporter } from "../config/mailing.config.js";
+import jwt from "jsonwebtoken";import {transporter } from "../config/mailing.config.js";
 import cookieParser from "cookie-parser";
 import {auth, premiumAuth} from "../middlewares/auth.js";
 import { usuariosModelo } from "../dao/models/usuario.modelo.js";
 import { UsuarioDTO, UsuarioGitDTO } from "../dto/usuarioDTO.js";
 import { config } from "../config/config.js";
 import { UsuariosManagerMongo } from "../dao/managersMongo/usuariosManager.js";
+import { validate } from "../utils.js";
 
 const usuariosManager = new UsuariosManagerMongo()
 
@@ -36,23 +36,40 @@ router.get("/errorLogin", (req, res) => {
 
 router.post(
   "/login",
-  passport.authenticate("login", {
-    failureRedirect: "/api/sessions/errorLogin",
-    session: false,
-  }),
+  (req, res, next) => {
+    passport.authenticate("login", (err, user, info) => {
+      if (err) {
+        return res.status(500).json({ error: "Internal Server Error" });
+      }
+      if (!user) {
+        return res.status(401).json({ error: "Contraseña o email incorrectos" });
+      }
+      req.user = user;
+      next();
+    })(req, res, next);
+  },
   async (req, res) => {
-    let usuario = req.user; //Obtenemos el user del middleware del passport
-    usuario = { ...usuario };
-    delete usuario.password;
-    let token = jwt.sign(usuario, config.SECRET, { expiresIn: "1h" });
+    try {
+      let usuario = req.user;
 
-    res.cookie("appToken", token, {
-      maxAge: 1000 * 60 * 60,
-      signed: true,
-      httpOnly: true,
-    });
-    res.setHeader("Content-Type", "application/json");
-    return res.redirect("/products");
+      usuario = { ...usuario };
+      delete usuario.password;
+
+
+      let token = jwt.sign(usuario, config.SECRET, { expiresIn: "1h" });
+
+      res.cookie("appToken", token, {
+        maxAge: 1000 * 60 * 60,
+        signed: true,
+        httpOnly: true,
+      });
+
+      return res.status(200).json({ message: "Login successful" });
+
+    } catch (error) {
+      res.setHeader('Content-Type','application/json');
+      return res.status(400).json({error:`Error en login: ${error}`})
+    }
   }
 );
 

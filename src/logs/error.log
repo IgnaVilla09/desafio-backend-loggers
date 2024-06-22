@@ -305,3 +305,46 @@
   level: 'fatal',
   timestamp: '2024-06-21T03:35:40.760Z'
 }
+{
+  message: 'ReferenceError: error is not defined\n' +
+    '    at Strategy._verify (file:///D:/desafio-backend-loggers/src/config/passport.config.js:118:31)\n' +
+    '    at process.processTicksAndRejections (node:internal/process/task_queues:95:5)',
+  level: 'fatal',
+  timestamp: '2024-06-22T02:25:47.113Z'
+}
+{
+  message: 'ReferenceError: error is not defined\n' +
+    '    at Strategy._verify (file:///D:/desafio-backend-loggers/src/config/passport.config.js:118:31)\n' +
+    '    at process.processTicksAndRejections (node:internal/process/task_queues:95:5)',
+  level: 'fatal',
+  timestamp: '2024-06-22T02:26:29.465Z'
+}
+{
+  message: `CastError: Cast to string failed for value "{ email: 'adminCoder@coder.com' }" (type Object) at path "email" for model "usuarios"\n` +
+    '    at SchemaString.cast (D:\\desafio-backend-loggers\\node_modules\\mongoose\\lib\\schema\\string.js:606:11)\n' +
+    '    at SchemaType.applySetters (D:\\desafio-backend-loggers\\node_modules\\mongoose\\lib\\schemaType.js:1221:12)\n' +
+    '    at SchemaString.castForQuery (D:\\desafio-backend-loggers\\node_modules\\mongoose\\lib\\schema\\string.js:692:17)\n' +
+    '    at cast (D:\\desafio-backend-loggers\\node_modules\\mongoose\\lib\\cast.js:304:34)\n' +
+    '    at Query.cast (D:\\desafio-backend-loggers\\node_modules\\mongoose\\lib\\query.js:4778:12)\n' +
+    '    at Query._castConditions (D:\\desafio-backend-loggers\\node_modules\\mongoose\\lib\\query.js:2199:10)\n' +
+    '    at model.Query._findOne (D:\\desafio-backend-loggers\\node_modules\\mongoose\\lib\\query.js:2513:8)\n' +
+    '    at model.Query.exec (D:\\desafio-backend-loggers\\node_modules\\mongoose\\lib\\query.js:4322:80)\n' +
+    '    at process.processTicksAndRejections (node:internal/process/task_queues:95:5)\n' +
+    '    at async UsuariosManagerMongo.getByEmail (file:///D:/desafio-backend-loggers/src/dao/managersMongo/usuariosManager.js:14:12)',
+  level: 'fatal',
+  timestamp: '2024-06-22T03:26:33.297Z'
+}
+{
+  message: 'ReferenceError: jwt is not defined\n' +
+    '    at Strategy._verify (file:///D:/desafio-backend-loggers/src/config/passport.config.js:126:23)\n' +
+    '    at process.processTicksAndRejections (node:internal/process/task_queues:95:5)',
+  level: 'fatal',
+  timestamp: '2024-06-22T03:48:08.178Z'
+}
+{
+  message: 'ReferenceError: res is not defined\n' +
+    '    at Strategy._verify (file:///D:/desafio-backend-loggers/src/config/passport.config.js:129:11)\n' +
+    '    at process.processTicksAndRejections (node:internal/process/task_queues:95:5)',
+  level: 'fatal',
+  timestamp: '2024-06-22T03:48:57.519Z'
+}
